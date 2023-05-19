@@ -15,4 +15,8 @@ export default class BloodCellModel {
           WHERE h.name = ?`;
     db.all(query, [name], callback);
   }
+  getAllBloodCellsNames(callback) {
+    const query = `SELECT name FROM BloodCells`;
+    db.all(query, callback);
+  }
 }

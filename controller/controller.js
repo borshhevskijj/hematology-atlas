@@ -43,3 +43,18 @@ export const getBloodCellsByNameHandler = (request, response) => {
     response
   );
 };
+export const getAllBloodCellsNamesHandler = (request, response) => {
+  bloodCellModel.getAllBloodCellsNames((err, rows) => {
+    if (err) {
+      response.status(500).json("err" + err);
+    } else if (rows && rows.length > 0) {
+      console.log("nothing in cache");
+      response.status(200).json(rows);
+      // cache.set(requestParams, rows, 3600);
+    } else {
+      response.status(404).json({
+        error: "cell not found",
+      });
+    }
+  });
+};
