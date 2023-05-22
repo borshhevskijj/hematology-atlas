@@ -12,18 +12,16 @@ const SearchPage = () => {
 
     const sendData = async ()=>{
         try {
-            const id= setTimeout(() => { //задержка перед показам лоадера
+            const setTimeoutId= setTimeout(() => { //задержка перед показам лоадера
                     setLoading(true);
-                }, 300);
+                }, 350);
 
                 const fetching = await fetch(`http://localhost:5000/search/${inputText}`)
                 const data = await fetching.json()
                 setData(data)
                 console.log(data);
-                clearTimeout(id)// 
-                setLoading(false);
-
-                    
+                clearTimeout(setTimeoutId)// сброс таймаута если фетч быстрее задержки таймаута
+                setLoading(false);                    
                 } catch (err) {
                     console.log(err)
                 }

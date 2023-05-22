@@ -1,14 +1,42 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
+import {
+  createBrowserRouter,
+  RouterProvider,
+  createRoutesFromElements
+} from "react-router-dom";
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import HematopoiesisType from './HematopoiesisComponent/HematopoiesisType';
 import reportWebVitals from './reportWebVitals';
+import SearchPage from './searchComponent/SearchPage';
+
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App/>,
+  },
+  {
+    path: "search/",
+    element: <SearchPage />,
+  },
+  {
+    path: "hematopoiesis/:type",
+    element: <HematopoiesisType/>,
+  },
+]);
+
+
+
 root.render(
   <React.StrictMode>
-    <App />
+    {/* <App /> */}
+    <RouterProvider router={router} />
+
   </React.StrictMode>
 );
 

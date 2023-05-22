@@ -11,7 +11,7 @@ export interface IBloodCell {
 
 interface Props {
 data: IBloodCell[]
-isLoading:boolean
+isLoading?:boolean
 }
 
 export const DisplayBloodCells :React.FC<Props> = ({

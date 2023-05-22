@@ -1,0 +1,14 @@
+.accordion{
+    overflow: hidden;
+}
+.accordionContent{
+    transition: all .3s ease;
+    max-height: 0;
+    overflow: hidden;
+}
+.accordionContent.open{
+    max-height: none;
+    overflow: visible;
+}
+/* .accordionHeader h3{} */
+/* .accordionHeader span{} */
