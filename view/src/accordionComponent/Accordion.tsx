@@ -1,7 +1,9 @@
 import React,{useState,useRef,useEffect} from 'react';
-import { DisplayBloodCells, IBloodCell } from '../displayBloodCells/DisplayBloodCells';
+// import { DisplayBloodCells, IBloodCell } from '../displayBloodCells/DisplayBloodCells';
+import {IBloodCell} from '../HematopoiesisComponent/HematopoiesisType'
 import AccordionContent from './AccordionContent';
 import cl from './accordion.module.css'
+
 export interface Props {
     data: IBloodCell
 }
@@ -9,7 +11,6 @@ export interface Props {
 const Accordion: React.FC<Props> = ({ data }) => {
     const [isOpen, setIsOpen] = useState(false);
     const contentRef = useRef<HTMLDivElement>(null);
-
     useEffect(() => {
         if (contentRef.current) {
           const contentHeight = contentRef.current.scrollHeight;

@@ -18,5 +18,26 @@ function App() {
       </div>
   );
 }
+// Отправка запросов на сервер и получение данных
+// const bloodCellsResponse = await fetch('/bloodcells');
+// const bloodCellsData = await bloodCellsResponse.json();
+
+// const bloodCellImagesResponse = await fetch('/bloodcellimages');
+// const bloodCellImagesData = await bloodCellImagesResponse.json();
+
+// // Объединение BloodCells и BloodCellImages
+// const fullBloodCells = bloodCellsData.map(bloodCell => {
+//   const images = bloodCellImagesData
+//     .filter(image => image.bloodCell_id === bloodCell.id)
+//     .map(image => image.image);
+  
+//   return {
+//     ...bloodCell,
+//     images,
+//   };
+// });
+
+// // Использование полученных данных
+// console.log(fullBloodCells);
 
 export default App;
