@@ -29,13 +29,13 @@ const firstCharToUpperCase = (word) => {
 
 export const getBloodCellsByHemopoiesisHandler = (request) => {
   return new Promise((resolve, reject) => {
-    bloodCellModel.getBloodCellsByHemopoiesis(
+    bloodCellModel.getBloodCellsDescriptionByHemopoiesis(
       request.params.type,
       (err, rows) => {
         if (err) {
-          return reject(err);
+          reject(err);
         } else if (rows && rows.length > 0) {
-          return resolve(rows);
+          resolve(rows);
         } else {
           reject({
             error: "cell not found",
@@ -52,7 +52,7 @@ export const getImagesByHemopoiesisHandler = (request) => {
       if (err) {
         reject(err);
       } else if (rows && rows.length > 0) {
-        return resolve(rows);
+        resolve(rows);
       } else {
         reject({
           error: "cell not found",
@@ -62,16 +62,16 @@ export const getImagesByHemopoiesisHandler = (request) => {
   });
 };
 
-export const getImagesAndBloodCellsHandler = async (request, response) => {
+export const getBloodCellsByHematopoiesisHandler = async (
+  request,
+  response
+) => {
   try {
-    // const data = Promise.all([
-    //   getImagesByHemopoiesisHandler(request),
-    //   getBloodCellsByHemopoiesisHandler(request),
-    // ]);
     const cachedResult = cache.get(request.params.type);
     if (cachedResult) {
-      console.log(`in cache ${cachedResult}`);
+      // console.log(`in cache ${cachedResult}`);
       response.status(200).json(cachedResult);
+      return;
     }
     const images = await getImagesByHemopoiesisHandler(request);
     const bloodCellDescription = await getBloodCellsByHemopoiesisHandler(
@@ -88,7 +88,7 @@ export const getImagesAndBloodCellsHandler = async (request, response) => {
 
 export const getBloodCellsByNameHandler = (request, response) => {
   queryProcessing(
-    bloodCellModel.getBloodCellByName,
+    bloodCellModel.getBloodCellDescriptionByName,
     firstCharToUpperCase(request.params.name),
     response
   );

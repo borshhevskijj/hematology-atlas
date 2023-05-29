@@ -43,9 +43,9 @@ const HematopoiesisType = () => {
           img,
         })
       });
-      console.log(results);
       return results
     }
+    
   const getData = async ()=>{
     try {
             const fetching = await fetch(`http://localhost:5000/hematopoiesis/${type}`)
