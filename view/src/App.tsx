@@ -7,7 +7,7 @@ import  "./App.css";
 function App() {
   return (
     <div className="App">
-        {/* <SearchPage/> */}
+        <SearchPage/>
         <Link to={`hematopoiesis/lymphopoiesis`}>Лимфопоэз</Link>
         <Link to={`hematopoiesis/granulopoiesis`}>Гранулопоэз</Link>
         <Link to={`hematopoiesis/erythropoiesis`}>Эритропоэз</Link>

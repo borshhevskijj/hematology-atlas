@@ -25,6 +25,14 @@ export default class BloodCellModel {
     db.all(query, [name], callback);
   }
 
+  getImagesByName(name, callback) {
+    const query = `SELECT bci.*
+    FROM BloodCellImages bci
+    JOIN BloodCells bc ON bc.id = bci.bloodCell_id
+    WHERE bc.name = ?`;
+    db.all(query, [name], callback);
+  }
+
   getAllBloodCellsNames(callback) {
     const query = `SELECT name FROM BloodCells`;
     db.all(query, callback);

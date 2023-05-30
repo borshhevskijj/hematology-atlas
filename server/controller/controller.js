@@ -3,31 +3,28 @@ import nodeCache from "node-cache";
 const bloodCellModel = new BloodCellModel();
 const cache = new nodeCache();
 
-const queryProcessing = (modelMethod, requestParams, response) => {
-  const cachedResult = cache.get(requestParams);
-  if (cachedResult) {
-    return response.status(200).json(cachedResult);
-  }
-  modelMethod(requestParams, (err, rows) => {
-    if (err) {
-      response.status(500).json("err" + err);
-    } else if (rows && rows.length > 0) {
-      response.status(200).json(rows);
-      cache.set(requestParams, rows, 3600);
-    } else {
-      response.status(404).json({
-        error: "cell not found",
-      });
-    }
-  });
-};
-
-const firstCharToUpperCase = (word) => {
+export const firstCharToUpperCase = (word) => {
   const lowerCaseWord = word.toLowerCase();
   return lowerCaseWord.slice(0, 1).toUpperCase().concat(lowerCaseWord.slice(1));
 };
 
-export const getBloodCellsByHemopoiesisHandler = (request) => {
+const filterData = (data) => {
+  const [images, description] = data;
+  // const sortedDescription = description.sort((a,b)=>a.id - b.id)
+  const results = [];
+  description.map((bloodCell) => {
+    const img = images
+      .filter((image) => image.bloodCell_id === bloodCell.id)
+      .map((image) => image.image);
+    results.push({
+      ...bloodCell,
+      img,
+    });
+  });
+  return results;
+};
+
+export const getBloodCellsDescriptionByHemopoiesisHandler = (request) => {
   return new Promise((resolve, reject) => {
     bloodCellModel.getBloodCellsDescriptionByHemopoiesis(
       request.params.type,
@@ -46,9 +43,45 @@ export const getBloodCellsByHemopoiesisHandler = (request) => {
   });
 };
 
-export const getImagesByHemopoiesisHandler = (request) => {
+export const getBloodCellsDescriptionByNameHandler = (request) => {
   return new Promise((resolve, reject) => {
-    bloodCellModel.getImagesByHemopoiesis(request.params.type, (err, rows) => {
+    bloodCellModel.getBloodCellDescriptionByName(
+      firstCharToUpperCase(request.params.name),
+      (err, rows) => {
+        console.log(rows);
+        if (err) {
+          reject(err);
+        } else if (rows && rows.length > 0) {
+          resolve(rows);
+        } else {
+          reject({
+            error: "cell not found",
+          });
+        }
+      }
+    );
+  });
+};
+
+// const getImagesByHemopoiesisHandler = (request) => {
+//   return new Promise((resolve, reject) => {
+//     bloodCellModel.getImagesByHemopoiesis(request.params.type, (err, rows) => {
+//       if (err) {
+//         reject(err);
+//       } else if (rows && rows.length > 0) {
+//         resolve(rows);
+//       } else {
+//         reject({
+//           error: "cell not found",
+//         });
+//       }
+//     });
+//   });
+// };
+
+const getImagesHandler = (modelMethod, requestParams) => {
+  return new Promise((resolve, reject) => {
+    modelMethod(requestParams, (err, rows) => {
       if (err) {
         reject(err);
       } else if (rows && rows.length > 0) {
@@ -69,16 +102,17 @@ export const getBloodCellsByHematopoiesisHandler = async (
   try {
     const cachedResult = cache.get(request.params.type);
     if (cachedResult) {
-      // console.log(`in cache ${cachedResult}`);
       response.status(200).json(cachedResult);
       return;
     }
-    const images = await getImagesByHemopoiesisHandler(request);
-    const bloodCellDescription = await getBloodCellsByHemopoiesisHandler(
-      request
+    const images = await getImagesHandler(
+      bloodCellModel.getImagesByHemopoiesis,
+      request.params.type
     );
+    const bloodCellDescription =
+      await getBloodCellsDescriptionByHemopoiesisHandler(request);
 
-    const result = [images, bloodCellDescription];
+    const result = filterData([images, bloodCellDescription]);
     response.status(200).json(result);
     cache.set(request.params.type, result, 3600);
   } catch (error) {
@@ -86,12 +120,29 @@ export const getBloodCellsByHematopoiesisHandler = async (
   }
 };
 
-export const getBloodCellsByNameHandler = (request, response) => {
-  queryProcessing(
-    bloodCellModel.getBloodCellDescriptionByName,
-    firstCharToUpperCase(request.params.name),
-    response
-  );
+export const getBloodCellsByNameHandler = async (request, response) => {
+  const requestPramsName = firstCharToUpperCase(request.params.name);
+  try {
+    const cachedResult = cache.get(requestPramsName);
+    if (cachedResult) {
+      response.status(200).json(...cachedResult);
+      return;
+    }
+    // const images = await getImagesByHemopoiesisHandler(request);
+    const images = await getImagesHandler(
+      bloodCellModel.getImagesByName,
+      requestPramsName
+    );
+    const bloodCellDescription = await getBloodCellsDescriptionByNameHandler(
+      request
+    );
+    const result = filterData([images, bloodCellDescription]);
+
+    response.status(200).json(...result);
+    cache.set(requestPramsName, result, 3600);
+  } catch (error) {
+    response.status(500).json({ error: error.message });
+  }
 };
 
 export const getAllBloodCellsNamesHandler = (request, response) => {

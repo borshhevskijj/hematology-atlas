@@ -27,34 +27,35 @@ export interface IBloodCell {
 const HematopoiesisType = () => {
     const { type } = useParams();
     const navigate = useNavigate()
-    const [data,setData]= useState<any>([])
+    const [data,setData]= useState<IBloodCell[]>([])
 
-    const filterData = async(data:any)=>{
-      const [images,description]:[bloodCellImage[],IBloodCell[]]= data
-      const sortedDescription = description.sort((a,b)=>a.id - b.id)
+    // const filterData = async(data:any)=>{
+    //   const [images,description]:[bloodCellImage[],IBloodCell[]]= data
+    //   const sortedDescription = description.sort((a,b)=>a.id - b.id)
 
-      const results:IBloodCell[]= []
-      sortedDescription.map(bloodCell => {
-        const img = images
-          .filter(image => image.bloodCell_id === bloodCell.id)
-          .map(image => image.image);
-        results.push({
-          ...bloodCell,
-          img,
-        })
-      });
-      return results
-    }
+    //   const results:IBloodCell[]= []
+    //   sortedDescription.map(bloodCell => {
+    //     const img = images
+    //       .filter(image => image.bloodCell_id === bloodCell.id)
+    //       .map(image => image.image);
+    //     results.push({
+    //       ...bloodCell,
+    //       img,
+    //     })
+    //   });
+    //   return results
+    // }
     
   const getData = async ()=>{
     try {
             const fetching = await fetch(`http://localhost:5000/hematopoiesis/${type}`)
             const data:IBloodCell[] = await fetching.json()
-            setData(await filterData(data))
+            setData(data)
           } catch (err) {
             console.error(err)
           }
         }
+
         
     useEffect(() => {
         getData()

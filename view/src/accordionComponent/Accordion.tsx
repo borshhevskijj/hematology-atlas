@@ -9,6 +9,8 @@ export interface Props {
 }
 
 const Accordion: React.FC<Props> = ({ data }) => {
+  console.log('render Accordion');
+  
     const [isOpen, setIsOpen] = useState(false);
     const contentRef = useRef<HTMLDivElement>(null);
     useEffect(() => {

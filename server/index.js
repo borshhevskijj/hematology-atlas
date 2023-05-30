@@ -1,11 +1,11 @@
 import express from "express";
 import cors from "cors";
 import {
+  // getBloodCellsByNameHandler,
+  getBloodCellsByHematopoiesisHandler,
   getBloodCellsByNameHandler,
   getAllBloodCellsNamesHandler,
-  // getBloodCellsByHemopoiesisHandler,
-  // getImagesByHemopoiesisHandler,
-  getBloodCellsByHematopoiesisHandler,
+  firstCharToUpperCase,
 } from "./controller/controller.js";
 
 const app = express();
