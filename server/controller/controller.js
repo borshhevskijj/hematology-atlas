@@ -125,10 +125,9 @@ export const getBloodCellsByNameHandler = async (request, response) => {
   try {
     const cachedResult = cache.get(requestPramsName);
     if (cachedResult) {
-      response.status(200).json(...cachedResult);
+      response.status(200).json(cachedResult);
       return;
     }
-    // const images = await getImagesByHemopoiesisHandler(request);
     const images = await getImagesHandler(
       bloodCellModel.getImagesByName,
       requestPramsName
@@ -139,9 +138,9 @@ export const getBloodCellsByNameHandler = async (request, response) => {
     const result = filterData([images, bloodCellDescription]);
 
     response.status(200).json(...result);
-    cache.set(requestPramsName, result, 3600);
+    cache.set(requestPramsName, ...result, 3600);
   } catch (error) {
-    response.status(500).json({ error: error.message });
+    response.status(404).json({ error: "клетка не найдена!" });
   }
 };
 

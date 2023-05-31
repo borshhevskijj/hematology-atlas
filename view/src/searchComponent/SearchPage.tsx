@@ -9,43 +9,58 @@ const SearchPage = () => {
     const [data,setData] = useState<IBloodCell>()
     const [inputText,setInputText] = useState('')
     const [isLoading,setLoading] = useState(false)
+    const [err,setError]= useState<any>(null)
 
-    const sendData = async ()=>{
+
+    const getData = async ()=>{
+        if (!inputText) {
+            return
+        }
         try {
-            const setTimeoutId= setTimeout(() => { //задержка перед показам лоадера
-                    setLoading(true);
+            const setTimeoutId= setTimeout(() => {                             setLoading(true);
                 }, 350)
                 const fetching = await fetch(`http://localhost:5000/search/${inputText}`)
-                const data = await fetching.json()
-                setData(data)
-                clearTimeout(setTimeoutId)// сброс таймаута если фетч быстрее задержки таймаута
-                console.log(data,'searchPage');
-                
-                setLoading(false);                    
-                } catch (err) {
-                    console.log(err)
+                if (fetching.ok) {
+                    const data = await fetching.json()
+                    setData(data)
+                    clearTimeout(setTimeoutId)
+                    setLoading(false);    
+                    setError(null)    
+                    return  
+                }
+                if (!fetching.ok) {
+                    setError('Ошибка, не удается найти клетку')
+                    setData(undefined)
+                    setLoading(false);  
+                    return  
+                }
+                setError('Неизвестная ошибка')
+                setData(undefined)
+            } catch (err) {
+                setError("Произошла ошибка при выполнении запроса");
+                setData(undefined)
+                setLoading(false);    
                 }
         }
-        useEffect(() => {
-            if (!inputText) {
-                return
-            }
-            sendData()
-          },[setInputText]);
+        
     
-       
+        useEffect(() => {
+            getData()
+        },[setInputText]);
+        
+    
 
     return (
         <>
         <Input
         inputText={inputText}
         setInputText={setInputText}
-        sendData={sendData}
+        getData={getData}
         />
-        {data && Object.keys(data).length > 0 && <Accordion data={data}/>}
-        
-        {/* <DisplayBloodCells isLoading={isLoading} data={data}/> */}
-        {/* {data?.length && <Accordion data={data}/>} */}
+        {err && <div>{err}</div> }
+        {
+         !err && <Accordion data={data!} isLoading={isLoading} err={err}/>
+        }
         </>
     );
 };

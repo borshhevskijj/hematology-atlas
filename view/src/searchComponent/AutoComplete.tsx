@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState,useEffect } from "react";
 interface ICellName {
     name:string
 }
@@ -15,11 +15,14 @@ export const AutoComplete:React.FC = () => {
                 localStorage.setItem('BCnames',JSON.stringify(data))
         }
 
-        if (!isNameLoaded) {
-            getAllCellsNames()
-            setIsNameLoaded(true)
-            console.log('AC WOKR');
-        }    
+        
+        useEffect(() => {
+            if (!isNameLoaded) {
+                getAllCellsNames()
+                setIsNameLoaded(true)
+                console.log('AutoComplete Effect');
+            }    
+          },[]);
     return (
         <>
             <datalist id="auto_complete">

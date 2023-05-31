@@ -6,11 +6,12 @@ import cl from './accordion.module.css'
 
 export interface Props {
     data: IBloodCell
+    isLoading: boolean
+    err: string | null
 }
 
-const Accordion: React.FC<Props> = ({ data }) => {
-  console.log('render Accordion');
-  
+const Accordion: React.FC<Props> = ({ data,isLoading,err}) => {
+
     const [isOpen, setIsOpen] = useState(false);
     const contentRef = useRef<HTMLDivElement>(null);
     useEffect(() => {
@@ -24,7 +25,16 @@ const Accordion: React.FC<Props> = ({ data }) => {
       setIsOpen(!isOpen);
     };
 
+    if (isLoading) {
+        return <div>Loading...</div>
+    }
+    if (err) {
+        return  <div>{err}</div>
+    }
+    
     return (
+      <>
+      { data && Object.keys(data).length &&
         <div className={cl.accordion} onClick={()=> toggleAccordion() }>
       <div className={cl.accordionHeader}>
         <h2>{data.name}</h2>
@@ -33,9 +43,14 @@ const Accordion: React.FC<Props> = ({ data }) => {
       <div
        className={`${cl.accordionContent} ${isOpen ? cl.open : ''}`}
        ref={contentRef}>
-            <AccordionContent data={data}/>
+            <AccordionContent 
+              isLoading={isLoading} 
+              err={err}
+              data={data}/>
       </div>
     </div>
+            }
+              </>
 
     );
 };

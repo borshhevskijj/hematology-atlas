@@ -5,7 +5,6 @@ import {
   getBloodCellsByHematopoiesisHandler,
   getBloodCellsByNameHandler,
   getAllBloodCellsNamesHandler,
-  firstCharToUpperCase,
 } from "./controller/controller.js";
 
 const app = express();
@@ -19,6 +18,7 @@ app.get("/hematopoiesis/:type", (request, response) => {
 app.get("/search/:name", (request, response) => {
   getBloodCellsByNameHandler(request, response);
 });
+
 app.get("/allCells", (request, response) => {
   getAllBloodCellsNamesHandler(request, response);
 });

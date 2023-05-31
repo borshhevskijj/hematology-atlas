@@ -13,7 +13,7 @@ const AccordionContent:React.FC<Props> = ({data}) => {
             <li> {data.img.map(image =>{
                 return(
                     // <Carousel image={image}/>
-                    <img src={image} alt=""  />
+                    <img key={image} src={image} alt=""  />
                 )
             })} 
             </li>
