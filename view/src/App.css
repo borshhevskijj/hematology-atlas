@@ -1,1 +1,25 @@
 @import url('../node_modules/reset-css/reset.css');
+
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Raleway&display=swap');
+*{
+    text-decoration: none;
+    color: rgba(255, 255, 255, 1);
+    background-color: #1E1E1E;
+}
+
+.App{
+    padding: 0 120px;
+    font-size: 15px;
+    font-family: 'Raleway', sans-serif;
+
+}
+h1,h2{
+    font-size: 105px;
+    line-height: 127px;
+    font-family: 'Cormorant Garamond', serif;
+    text-transform: uppercase;
+}
+h2{
+    font-size: 75px;
+    line-height: 91px;
+}

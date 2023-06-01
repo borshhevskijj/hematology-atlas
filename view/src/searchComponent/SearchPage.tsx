@@ -1,5 +1,4 @@
 import React,{useState,useEffect} from 'react';
-import { DisplayBloodCells } from '../displayBloodCells/DisplayBloodCells';
 import {Input} from './Input';
 import {IBloodCell} from '../HematopoiesisComponent/HematopoiesisType'
 import Accordion from '../accordionComponent/Accordion'

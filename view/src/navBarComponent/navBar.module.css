@@ -1,0 +1,35 @@
+header{
+  padding: 25px 0;
+}
+nav ul {
+  display: flex;
+  justify-content: space-between;
+}
+.navBarLeftPart{
+    display: flex;
+}
+.navBarLeftPart li:not(:last-child){
+  margin-right: 145px;
+}
+
+.navBarRightPart p {
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+}
+
+.submenu {
+  display: block;
+  position: absolute;
+  z-index: 1;
+  top: -400px;
+  transition: all .4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    /* background-color: #f12d2d; */
+  }
+  .submenu li{
+    padding: 16px 0;
+  }
+  
+ .submenu.open{
+    transform: translateY(450px);
+  }

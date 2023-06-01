@@ -31,7 +31,6 @@ const Accordion: React.FC<Props> = ({ data,isLoading,err}) => {
     if (err) {
         return  <div>{err}</div>
     }
-    
     return (
       <>
       { data && Object.keys(data).length &&
