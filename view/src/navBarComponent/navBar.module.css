@@ -1,5 +1,5 @@
 header{
-  padding: 25px 0;
+  padding: 25px 0 125px 0;
 }
 nav ul {
   display: flex;
@@ -16,6 +16,9 @@ nav ul {
   cursor: pointer;
   position: relative;
   z-index: 2;
+}
+a.active{
+  color: red;
 }
 
 .submenu {

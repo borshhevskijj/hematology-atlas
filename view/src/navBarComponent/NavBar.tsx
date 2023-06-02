@@ -1,10 +1,29 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect, useRef } from "react";
+import { Link, NavLink } from "react-router-dom";
 import cl from "./navBar.module.css";
-
+import { useNavigate } from "react-router-dom";
 const NavBar = () => {
+  const navigate = useNavigate();
   const [isOpen, setOpen] = useState(false);
-  const fn = () => {
+
+  const refs = {
+    homePage: useRef(null),
+    aboutProject: useRef(null),
+    aboutBloodCells: useRef(null),
+  };
+  type ref = "#homePage" | "#aboutProject" | "#aboutBloodCells";
+
+  useEffect(() => {
+    const { hash } = window.location;
+    const qwe = hash.substring(1);
+    const targetRef = refs.aboutProject;
+    console.log(targetRef, targetRef.current);
+    if (targetRef && targetRef.current) {
+      (targetRef.current as HTMLElement).scrollIntoView({ behavior: "smooth" });
+    }
+  }, []);
+
+  const toggleSubmenu = () => {
     setOpen(!isOpen);
   };
   return (
@@ -13,18 +32,21 @@ const NavBar = () => {
         <ul>
           <div className={cl.navBarLeftPart}>
             <li>
-              <a href="#main">Главная</a>
+              <Link to="/homePage">Главная</Link>
             </li>
             <li>
-              <a href="#about-project">О проекте</a>
+              <Link to="/homePage#aboutProject">О проекте</Link>
             </li>
             <li>
-              <a href="#about-blood-cells">Полезная информация</a>
+              <Link to="/homePage#aboutBloodCells">Полезная информация</Link>
+            </li>
+            <li>
+              <button onClick={() => navigate("/homePage/#aboutProject")}>О Проекте</button>
             </li>
           </div>
 
           <li className={cl.navBarRightPart}>
-            <p onClick={() => fn()}>Кроветворение</p>
+            <p onClick={() => toggleSubmenu()}>Кроветворение</p>
             <ul className={`${cl.submenu} ${isOpen ? cl.open : ""}`}>
               <li>
                 <Link to={`hematopoiesis/lymphopoiesis`}>Лимфопоэз</Link>

@@ -1,0 +1,21 @@
+#aboutProject{
+    padding-bottom: 180px;
+}
+.content{
+    display: flex;
+    flex-direction: row;
+}
+.contentWrapper{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.contentWrapperRight p{
+    padding-top: 40px;
+    width: 50%;
+}
+.contentWrapperLeft p{
+    margin-bottom: 70px;
+    padding-right: 40px;
+}
