@@ -26,10 +26,11 @@ html, body {
     z-index: 3;
  }
 body{
+    position: relative;
     padding: 0 120px;
     font-size: 15px;
     font-family: 'Raleway', sans-serif;
-    position: relative;
+    scroll-behavior: smooth;
 }
 
 p{

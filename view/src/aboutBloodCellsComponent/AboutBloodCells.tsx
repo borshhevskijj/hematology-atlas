@@ -4,7 +4,7 @@ import Description from "./Description";
 import useHash from "../CustomHooks/useHash";
 const AboutBloodCells = () => {
   const ref = useRef(null);
-  useHash(ref);
+  // useHash(ref);Ы
   return (
     <section ref={ref} className={cl.aboutBloodCells} id="aboutBloodCells">
       <h2>

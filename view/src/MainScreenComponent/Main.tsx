@@ -6,7 +6,7 @@ import img from "./mainScreenHQ.webp";
 import useHash from "../CustomHooks/useHash";
 const Main = () => {
   const ref = useRef(null);
-  useHash(ref);
+  // useHash(ref);
   return (
     <section ref={ref} id="main" className={cl.main}>
       <h1>

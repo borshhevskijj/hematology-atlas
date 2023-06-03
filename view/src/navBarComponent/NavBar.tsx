@@ -1,31 +1,13 @@
-import React, { useState, useEffect, useRef } from "react";
-import { Link, NavLink } from "react-router-dom";
+import React from "react";
 import cl from "./navBar.module.css";
-import { useNavigate } from "react-router-dom";
-const NavBar = () => {
-  const navigate = useNavigate();
-  const [isOpen, setOpen] = useState(false);
+import { HashLink as Link } from "react-router-hash-link";
 
-  const refs = {
-    homePage: useRef(null),
-    aboutProject: useRef(null),
-    aboutBloodCells: useRef(null),
-  };
-  type ref = "#homePage" | "#aboutProject" | "#aboutBloodCells";
+interface Props {
+  SubmenuRef: React.MutableRefObject<null | HTMLParagraphElement>;
+  isOpen: boolean;
+}
 
-  useEffect(() => {
-    const { hash } = window.location;
-    const qwe = hash.substring(1);
-    const targetRef = refs.aboutProject;
-    console.log(targetRef, targetRef.current);
-    if (targetRef && targetRef.current) {
-      (targetRef.current as HTMLElement).scrollIntoView({ behavior: "smooth" });
-    }
-  }, []);
-
-  const toggleSubmenu = () => {
-    setOpen(!isOpen);
-  };
+const NavBar: React.FC<Props> = ({ isOpen, SubmenuRef }) => {
   return (
     <header>
       <nav>
@@ -40,13 +22,10 @@ const NavBar = () => {
             <li>
               <Link to="/homePage#aboutBloodCells">Полезная информация</Link>
             </li>
-            <li>
-              <button onClick={() => navigate("/homePage/#aboutProject")}>О Проекте</button>
-            </li>
           </div>
 
           <li className={cl.navBarRightPart}>
-            <p onClick={() => toggleSubmenu()}>Кроветворение</p>
+            <p ref={SubmenuRef}>Кроветворение</p>
             <ul className={`${cl.submenu} ${isOpen ? cl.open : ""}`}>
               <li>
                 <Link to={`hematopoiesis/lymphopoiesis`}>Лимфопоэз</Link>
