@@ -1,14 +1,12 @@
-import { useRef } from "react";
-import SearchPage from "../searchComponent/SearchPage";
 import { Input } from "../searchComponent/Input";
 import cl from "./main.module.css";
 import img from "./mainScreenHQ.webp";
-import useHash from "../CustomHooks/useHash";
 const Main = () => {
-  const ref = useRef(null);
-  // useHash(ref);
   return (
-    <section ref={ref} id="main" className={cl.main}>
+    <section
+      //  id="main"
+      className={cl.main}
+    >
       <h1>
         <span>гематологический</span>
         <span>атлас</span>

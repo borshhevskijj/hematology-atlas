@@ -10,15 +10,6 @@ import Main from "./MainScreenComponent/Main";
 import HematopoiesisType from "./HematopoiesisComponent/HematopoiesisType";
 import HomePage from "./homePage/HomePage";
 
-// const paths = "hematopoiesis/:type"; //по этому пути не должен отображаться <Main /> компонент
-
-const paths = {
-  hematopoiesis0: /^\/hematopoiesis\/(.+)$/,
-  search1: /^\/search\/(.+)$/,
-  homePage2: /\/homepage#?[a-zA-Z]*/,
-};
-// setHematopoiesis(regexp.test(location));
-
 function App() {
   const location = useLocation().pathname;
   // const mathch = matchRoutes(location);
@@ -31,7 +22,7 @@ function App() {
 
   function checkCurrentPath(pathname: string) {
     // const regex = /^\/(search\/|hematopoiesis\/|homePage)(.*)?$/;
-    const regex = /^\/(search\/[^/]+|hematopoiesis\/[^/]+|homePage)$/;
+    const regex = /^\/(search\/[^/]+|hematopoiesis\/[^/]+|)$/;
     return regex.test(pathname);
   }
   const isWorkingPath = checkCurrentPath(location);
@@ -46,7 +37,7 @@ function App() {
     setOpen(false);
   };
 
-  const regexp = /^\/hematopoiesis\/(.+)$/; //надо 0 или более
+  const regexp = /^\/hematopoiesis\/(.+)$/;
   const isHematopoiesisPath = () => {
     if (regexp.test(location)) {
       setHematopoiesis(true);
@@ -57,23 +48,17 @@ function App() {
 
   useEffect(() => {
     isHematopoiesisPath();
-    console.log(isWorkingPath, location, "isWorkingPath");
     checkCurrentPath(location);
   }, [location]);
-
-  // {!checkCurrentPath(location) && <div>Такой страницы не существует</div>}
-  // if (!checkCurrentPath(location)) {
-  //   return <div>Такой страницы не существует</div>;
-  // }
 
   return (
     <div onClick={(e) => toggleSubmenu(e)} className="App">
       <NavBar isOpen={isSubMenuOpen} SubmenuRef={NavBarSubmenuRef} />
       {isWorkingPath && !isHematopoiesis && <Main />}
       <Routes>
+        <Route path="/" element={<HomePage />} />
         <Route path="search/:name" element={<SearchPage />} />
         <Route path="hematopoiesis/:type" element={<HematopoiesisType />} />
-        <Route path="/homePage" element={<HomePage />} />
         <Route path="*" element={<div>Такой страницы не существует</div>} />
       </Routes>
     </div>

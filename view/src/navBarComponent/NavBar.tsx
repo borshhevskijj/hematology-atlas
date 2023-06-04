@@ -9,18 +9,18 @@ interface Props {
 
 const NavBar: React.FC<Props> = ({ isOpen, SubmenuRef }) => {
   return (
-    <header>
+    <header id="main">
       <nav>
         <ul>
           <div className={cl.navBarLeftPart}>
             <li>
-              <Link to="/homePage">Главная</Link>
+              <Link to="/#main">Главная</Link>
             </li>
             <li>
-              <Link to="/homePage#aboutProject">О проекте</Link>
+              <Link to="/#aboutProject">О проекте</Link>
             </li>
             <li>
-              <Link to="/homePage#aboutBloodCells">Полезная информация</Link>
+              <Link to="/#aboutBloodCells">Полезная информация</Link>
             </li>
           </div>
 

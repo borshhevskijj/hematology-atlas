@@ -2,14 +2,10 @@ import { useRef, useEffect } from "react";
 import cl from "./aboutProject.module.css";
 import img from "./aboutprojectimg.webp";
 import img2 from "./aboutprojectimg2.webp";
-import useHash from "../CustomHooks/useHash";
 
 const AboutProject = () => {
-  const ref = useRef(null);
-  useHash(ref);
-
   return (
-    <section ref={ref} id="aboutProject">
+    <section id="aboutProject">
       <h2>О проекте</h2>
       <div className={cl.content}>
         <div className={`${cl.contentWrapper} ${cl.contentWrapperLeft}`}>

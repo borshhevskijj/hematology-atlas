@@ -10,13 +10,9 @@ interface Props {
   inputText: string;
 }
 
-// export const Input: React.FC<Props> = ({ getData, inputText, setInputText }) => {
 export const Input: React.FC = () => {
   const [inputText, setInputText] = useState(sessionStorage.getItem("CellName") || "");
   const navigate = useNavigate();
-
-  // useEffect(()=>{
-  // },[setInputText])
 
   return (
     <div className={cl.inputContainer}>
