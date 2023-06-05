@@ -15,26 +15,26 @@ const SearchPage = () => {
       return;
     }
     try {
-      const setTimeoutId = setTimeout(() => {
+      let timerId = setTimeout(() => {
         setLoading(true);
       }, 350);
+
       const fetching = await fetch(`http://localhost:5000/search/${name}`);
+
       if (fetching.ok) {
         const data = await fetching.json();
         setData(data);
-        clearTimeout(setTimeoutId);
         setError(null);
         setLoading(false);
+        clearTimeout(timerId);
         return;
       }
       if (!fetching.ok) {
-        setError("Ошибка, не удается найти клетку");
         setData(undefined);
         setLoading(false);
+        clearTimeout(timerId);
         return;
       }
-      setError("Неизвестная ошибка");
-      setData(undefined);
     } catch (err) {
       setError("Произошла ошибка при выполнении запроса");
       setData(undefined);
@@ -47,7 +47,6 @@ const SearchPage = () => {
     name && sessionStorage.setItem("CellName", name);
   }, [name]);
 
-  // useEffect(() => {
   if (isLoading) {
     return <div>loading...</div>;
   }
@@ -76,6 +75,26 @@ const SearchPage = () => {
           </ul>
         </>
       )}
+
+      {/* {data && Object.keys(data).length && (
+        <>
+        <div>{data.name}</div>
+        <div>{data.diseases}</div>
+        <div>{data.functions}</div>
+        <div>{data.markers}</div>
+        <div>{data.morphology}</div>
+        <div>{data.quantity}</div>
+        <ul>
+        {data.img.map((img) => {
+              return (
+                <li key={img}>
+                  <img src={img} alt="" />
+                </li>
+              );
+            })}
+            </ul>
+            </>
+            )} */}
     </div>
   );
 };
