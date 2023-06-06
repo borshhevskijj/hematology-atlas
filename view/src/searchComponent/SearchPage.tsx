@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Input } from "./Input";
 import { IBloodCell } from "../HematopoiesisComponent/HematopoiesisType";
 import Accordion from "../accordionComponent/Accordion";
-import { redirect, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 const SearchPage = () => {
   const { name } = useParams();
@@ -27,13 +27,12 @@ const SearchPage = () => {
         setError(null);
         setLoading(false);
         clearTimeout(timerId);
-        return;
       }
       if (!fetching.ok) {
         setData(undefined);
         setLoading(false);
         clearTimeout(timerId);
-        return;
+        setError("Такой клетки не существует!");
       }
     } catch (err) {
       setError("Произошла ошибка при выполнении запроса");
@@ -59,11 +58,17 @@ const SearchPage = () => {
       {data && Object.keys(data).length && (
         <>
           <div>{data.name}</div>
-          <div>{data.diseases}</div>
-          <div>{data.functions}</div>
-          <div>{data.markers}</div>
+          <hr />
           <div>{data.morphology}</div>
+          <hr />
+          <div>{data.functions}</div>
+          <hr />
+          <div>{data.markers}</div>
+          <hr />
           <div>{data.quantity}</div>
+          <hr />
+          <div>{data.diseases}</div>
+          <hr />
           <ul>
             {data.img.map((img) => {
               return (
