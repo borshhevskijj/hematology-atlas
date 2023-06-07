@@ -1,5 +1,7 @@
 .accordion{
     overflow: hidden;
+    border-bottom: 1.25px solid #FFFFFF;
+    padding: 45px 0;
 }
 .accordionContent{
     transition: all .3s ease;
@@ -10,5 +12,21 @@
     max-height: none;
     overflow: visible;
 }
-/* .accordionHeader h3{} */
+.accordionHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.accordionHeader h2{
+    padding: 0;
+}
+
+.accordion ul{
+    padding-left: 15px;
+    list-style: decimal;
+}
+.accordion ul li:last-child  {
+    margin-left:-15px ;
+}
+
 /* .accordionHeader span{} */

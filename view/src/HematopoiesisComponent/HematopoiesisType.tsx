@@ -1,60 +1,79 @@
-import React,{useState,useEffect} from 'react';
+import React, { useState, useEffect } from "react";
 // import { IBloodCell } from '../displayBloodCells/DisplayBloodCells';
-import Accordion from '../accordionComponent/Accordion';
-import {useParams,useNavigate} from 'react-router-dom';
-
+import Accordion from "../accordionComponent/Accordion";
+import { useParams, useNavigate } from "react-router-dom";
 
 interface bloodCellImage {
-  id: number
-  bloodCell_id: number
-  image: string
+  id: number;
+  bloodCell_id: number;
+  image: string;
 }
-
 
 export interface IBloodCell {
-  id:number
-  name: string
-  morphology:string
-  functions:string
-  markers:string
-  quantity:string
-  diseases:string
-  img: string[]
+  id: number;
+  name: string;
+  morphology: string;
+  functions: string;
+  markers: string;
+  quantity: string;
+  diseases: string;
+  img: string[];
 }
 
-
-
 const HematopoiesisType = () => {
-    const { type } = useParams();
-    const navigate = useNavigate()
-    const [data,setData]= useState<IBloodCell[]>([])
-    
-  const getData = async ()=>{
+  const { type } = useParams();
+  const navigate = useNavigate();
+  const [data, setData] = useState<IBloodCell[]>([]);
+  const [isLoading, setLoading] = useState(false);
+  const [error, setError] = useState<any>(null);
+
+  const getData = async () => {
     try {
-            const fetching = await fetch(`http://localhost:5000/hematopoiesis/${type}`)
-            const data:IBloodCell[] = await fetching.json()
-            setData(data)
-          } catch (err) {
-            console.error(err)
-          }
-        }
+      let timerId = setTimeout(() => {
+        setLoading(true);
+      }, 450);
+      const fetching = await fetch(`http://localhost:5000/hematopoiesis/${type}`);
+      if (fetching.ok) {
+        const data: IBloodCell[] = await fetching.json();
+        setData(data);
+        clearTimeout(timerId);
+        setLoading(false);
+        setError(null);
+        console.log("fetching.ok");
+      }
+      if (!fetching.ok) {
+        console.log("!fetching.ok");
+        setData([]);
+        setLoading(false);
+        clearTimeout(timerId);
+        setError("Произошла ошибка при выполнении запроса");
+      }
+    } catch (err) {
+      console.log("catch", err);
+      setError("Произошла ошибка при выполнении запроса");
+      setData([]);
+      setLoading(false);
+    }
+  };
 
-        
-    useEffect(() => {
-        getData()
-      },[type]);
+  useEffect(() => {
+    getData();
+  }, [type]);
 
-    return (
-        <>
-      <button onClick={() => navigate(-1)}>go back</button>
-            {data.length > 0 && data?.map((item:any) =>{
-       return (
-        //  <Accordion key={item.id} data={item}/>
-        <div>asd</div>
-       )
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+  if (error) {
+    return <div>{error}</div>;
+  }
+  return (
+    <section style={{ paddingBottom: 250 }}>
+      {data.length > 0 &&
+        data.map((item: any) => {
+          return <Accordion key={item.id} data={item} />;
         })}
-        </>
-    );
+    </section>
+  );
 };
 
 export default HematopoiesisType;

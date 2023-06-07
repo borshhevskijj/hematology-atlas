@@ -10,6 +10,7 @@ const SearchPage = () => {
 
   const [err, setError] = useState<any>(null);
   const [isLoading, setLoading] = useState(false);
+
   const getData = async () => {
     if (!name) {
       return;
@@ -80,26 +81,6 @@ const SearchPage = () => {
           </ul>
         </>
       )}
-
-      {/* {data && Object.keys(data).length && (
-        <>
-        <div>{data.name}</div>
-        <div>{data.diseases}</div>
-        <div>{data.functions}</div>
-        <div>{data.markers}</div>
-        <div>{data.morphology}</div>
-        <div>{data.quantity}</div>
-        <ul>
-        {data.img.map((img) => {
-              return (
-                <li key={img}>
-                  <img src={img} alt="" />
-                </li>
-              );
-            })}
-            </ul>
-            </>
-            )} */}
     </div>
   );
 };
