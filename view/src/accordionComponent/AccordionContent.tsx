@@ -1,4 +1,3 @@
-import React from "react";
 import { Props } from "./Accordion";
 import Carousel from "./Carousel";
 
@@ -11,12 +10,7 @@ const AccordionContent: React.FC<Props> = ({ data }) => {
       <li>Количество: {data.quantity}</li>
       <li>Болезни: {data.diseases}</li>
       <li>
-        {data.img.map((image) => {
-          return (
-            // <Carousel image={image}/>
-            <img key={image} src={image} alt="" />
-          );
-        })}
+        <Carousel imagesArr={data.img} />
       </li>
     </ul>
   );

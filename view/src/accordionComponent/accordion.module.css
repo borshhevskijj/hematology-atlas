@@ -18,15 +18,21 @@
     align-items: center;
 }
 .accordionHeader h2{
-    padding: 0;
+    padding: 0px;
 }
 
 .accordion ul{
     padding-left: 15px;
+    padding-top: 60px;
     list-style: decimal;
 }
+.accordion ul li{
+    padding-bottom: 10px;
+}
+
 .accordion ul li:last-child  {
     margin-left:-15px ;
+    padding-top: 40px;
 }
 
 /* .accordionHeader span{} */

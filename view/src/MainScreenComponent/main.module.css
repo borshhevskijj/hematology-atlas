@@ -3,7 +3,9 @@
     flex-direction: column;
     padding-bottom: 45px;
 }
-
+.main{
+    padding-top: 75px;
+}
 .content{
     display: flex;
     position: relative;

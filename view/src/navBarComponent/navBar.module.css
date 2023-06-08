@@ -1,9 +1,14 @@
 header{
-  padding: 25px 0 125px 0;
+  /* padding: 25px 0 125px 0; */
+  padding: 25px 0;
 }
 nav ul {
   display: flex;
   justify-content: space-between;
+  min-height: 50px;
+}
+nav ul li > *{
+  padding: 7px;
 }
 .navBarLeftPart{
     display: flex;
@@ -12,27 +17,25 @@ nav ul {
   margin-right: 145px;
 }
 
-.navBarRightPart p {
-  cursor: pointer;
+.navBarRightPart a {
+  /* cursor: pointer; */
   position: relative;
   z-index: 2;
 }
-a.active{
-  color: red;
-}
+
 
 .submenu {
   display: block;
   position: absolute;
   z-index: 1;
-  top: -400px;
+  top: -500px;
   transition: all .4s cubic-bezier(0.165, 0.84, 0.44, 1);
     /* background-color: #f12d2d; */
   }
   .submenu li{
-    padding: 16px 0;
+    padding: 16px 7px;
   }
   
  .submenu.open{
-    transform: translateY(450px);
+    transform: translateY(550px);
   }

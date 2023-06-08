@@ -3,7 +3,7 @@ import cl from "./navBar.module.css";
 import { HashLink as Link } from "react-router-hash-link";
 
 interface Props {
-  SubmenuRef: React.MutableRefObject<null | HTMLParagraphElement>;
+  SubmenuRef: React.MutableRefObject<null | HTMLAnchorElement>;
   isOpen: boolean;
 }
 
@@ -25,7 +25,9 @@ const NavBar: React.FC<Props> = ({ isOpen, SubmenuRef }) => {
           </div>
 
           <li className={cl.navBarRightPart}>
-            <p ref={SubmenuRef}>Кроветворение</p>
+            <a href="#" ref={SubmenuRef}>
+              Кроветворение
+            </a>
             <ul className={`${cl.submenu} ${isOpen ? cl.open : ""}`}>
               <li>
                 <Link to={`hematopoiesis/lymphopoiesis`}>Лимфопоэз</Link>

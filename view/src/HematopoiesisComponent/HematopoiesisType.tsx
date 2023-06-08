@@ -67,7 +67,7 @@ const HematopoiesisType = () => {
     return <div>{error}</div>;
   }
   return (
-    <section style={{ paddingBottom: 250 }}>
+    <section style={{ paddingBottom: 250, paddingTop: 50 }}>
       {data.length > 0 &&
         data.map((item: any) => {
           return <Accordion key={item.id} data={item} />;
