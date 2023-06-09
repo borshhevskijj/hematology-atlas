@@ -1,7 +1,7 @@
 import { useRef, useEffect } from "react";
 import cl from "./aboutProject.module.css";
-import img from "./aboutprojectimg.webp";
-import img2 from "./aboutprojectimg2.webp";
+import img from "../../../assets/aboutProject/aboutprojectimg.webp";
+import img2 from "../../../assets/aboutProject/aboutprojectimg2.webp";
 
 const AboutProject = () => {
   return (

@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { AutoComplete } from "./AutoComplete";
-import searchIcon from "./Search.svg";
+import searchIcon from "../../assets/icons/Search.svg";
 import cl from "./input.module.css";
-import { IBloodCell } from "../HematopoiesisComponent/HematopoiesisType";
+import { IBloodCell } from "../Hematopoiesis/HematopoiesisType";
 import { useNavigate } from "react-router-dom";
 interface Props {
   getData: () => Promise<void>;

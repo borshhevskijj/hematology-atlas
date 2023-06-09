@@ -1,10 +1,11 @@
 import React, { useState, useRef, useEffect } from "react";
 // import { DisplayBloodCells, IBloodCell } from '../displayBloodCells/DisplayBloodCells';
-import { IBloodCell } from "../HematopoiesisComponent/HematopoiesisType";
-import AccordionContent from "./AccordionContent";
+import { IBloodCell } from "../Hematopoiesis/HematopoiesisType";
+// import AccordionContent from "./AccordionContent";
 import cl from "./accordion.module.css";
-import minusIcon from "./minus.svg";
-import plusIcon from "./plus.svg";
+import minusIcon from "../../assets/icons/minus.svg";
+import plusIcon from "../../assets/icons/plus.svg";
+import DisplayCells from "../../components/DisplayCells";
 
 export interface Props {
   data: IBloodCell;
@@ -35,7 +36,7 @@ const Accordion: React.FC<Props> = ({ data }) => {
             </div>
           </div>
           <div className={`${cl.accordionContent} ${isOpen ? cl.open : ""}`} ref={contentRef}>
-            <AccordionContent data={data} />
+            <DisplayCells data={data} />
           </div>
         </div>
       )}

@@ -1,12 +1,9 @@
-import { Input } from "../searchComponent/Input";
+import { Input } from "../search/Input";
 import cl from "./main.module.css";
-import img from "./mainScreenHQ.webp";
+import img from "../../assets/mainScreen/mainScreenHQ.webp";
 const Main = () => {
   return (
-    <section
-      //  id="main"
-      className={cl.main}
-    >
+    <section className={cl.main}>
       <h1>
         <span>гематологический</span>
         <span>атлас</span>

@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Input } from "./Input";
-import { IBloodCell } from "../HematopoiesisComponent/HematopoiesisType";
-import Accordion from "../accordionComponent/Accordion";
+import { IBloodCell } from "../Hematopoiesis/HematopoiesisType";
+import Accordion from "../accordion/Accordion";
+import DisplayCells from "../../components/DisplayCells";
 import { useParams } from "react-router-dom";
 
 const SearchPage = () => {
@@ -54,35 +55,7 @@ const SearchPage = () => {
     return <div>{err}</div>;
   }
 
-  return (
-    <div>
-      {data && Object.keys(data).length && (
-        <>
-          <div>{data.name}</div>
-          <hr />
-          <div>{data.morphology}</div>
-          <hr />
-          <div>{data.functions}</div>
-          <hr />
-          <div>{data.markers}</div>
-          <hr />
-          <div>{data.quantity}</div>
-          <hr />
-          <div>{data.diseases}</div>
-          <hr />
-          <ul>
-            {data.img.map((img) => {
-              return (
-                <li key={img}>
-                  <img src={img} alt="" />
-                </li>
-              );
-            })}
-          </ul>
-        </>
-      )}
-    </div>
-  );
+  return <div>{data && Object.keys(data).length && <DisplayCells data={data} />}</div>;
 };
 
 export default SearchPage;

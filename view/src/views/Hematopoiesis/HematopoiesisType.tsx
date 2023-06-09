@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 // import { IBloodCell } from '../displayBloodCells/DisplayBloodCells';
-import Accordion from "../accordionComponent/Accordion";
+import Accordion from "../accordion/Accordion";
 import { useParams, useNavigate } from "react-router-dom";
 
 interface bloodCellImage {

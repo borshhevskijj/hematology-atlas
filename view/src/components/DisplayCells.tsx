@@ -1,7 +1,7 @@
-import { Props } from "./Accordion";
-import Carousel from "./Carousel";
+import { Props } from "../views/accordion/Accordion";
+import Carousel from "../views/accordion/Carousel";
 
-const AccordionContent: React.FC<Props> = ({ data }) => {
+const DisplayCells: React.FC<Props> = ({ data }) => {
   return (
     <ul key={data.id}>
       <li>Морфология: {data.morphology}</li>
@@ -16,4 +16,4 @@ const AccordionContent: React.FC<Props> = ({ data }) => {
   );
 };
 
-export default AccordionContent;
+export default DisplayCells;

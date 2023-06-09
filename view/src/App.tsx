@@ -1,14 +1,14 @@
 import React, { useState, useEffect, useRef } from "react";
-import SearchPage from "./searchComponent/SearchPage";
-import Accordion from "./accordionComponent/Accordion";
+import SearchPage from "./views/search/SearchPage";
+import Accordion from "./views/accordion/Accordion";
 import { Link, Routes, Route } from "react-router-dom";
 import "./App.css";
 import { useLocation, useMatch, matchRoutes } from "react-router-dom";
 import Background from "./backgroundImageComponent/Background";
-import NavBar from "./navBarComponent/NavBar";
-import Main from "./MainScreenComponent/Main";
-import HematopoiesisType from "./HematopoiesisComponent/HematopoiesisType";
-import HomePage from "./homePage/HomePage";
+import NavBar from "./views/navBar/NavBar";
+import Main from "./views/MainScreen/Main";
+import HematopoiesisType from "./views/Hematopoiesis/HematopoiesisType";
+import HomePage from "./views/homePage/HomePage";
 
 function App() {
   const location = useLocation().pathname;
