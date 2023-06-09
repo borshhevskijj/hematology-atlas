@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 // import { IBloodCell } from '../displayBloodCells/DisplayBloodCells';
 import Accordion from "../accordion/Accordion";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 interface bloodCellImage {
   id: number;
@@ -22,10 +22,9 @@ export interface IBloodCell {
 
 const HematopoiesisType = () => {
   const { type } = useParams();
-  const navigate = useNavigate();
   const [data, setData] = useState<IBloodCell[]>([]);
   const [isLoading, setLoading] = useState(false);
-  const [error, setError] = useState<any>(null);
+  const [error, setError] = useState<string | null>(null);
 
   const getData = async () => {
     try {

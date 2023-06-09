@@ -1,38 +1,32 @@
 import React from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import {Navigation, Pagination} from 'swiper'
+import cl from './carousel.module.css'
 
-
-import { useRef, useEffect } from 'react';
-import { register } from 'swiper/element/bundle';
-
-register();
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 const Carousel = ({imagesArr}) => {
-    const swiperElRef = useRef(null);
-  useEffect(() => {
-    // listen for Swiper events using addEventListener
-    swiperElRef.current && swiperElRef.current.addEventListener('progress', (e) => {
-      const [swiper, progress] = e.detail;
-      console.log(progress,swiper);
-    });
-
-    swiperElRef.current.addEventListener('slidechange', (e) => {
-      console.log('slide changed');
-    });
-  }, []);
-
     return (
-    <swiper-container
-      ref={swiperElRef}
-      slides-per-view="3"
-      navigation="true"
-      pagination="true"
+      <Swiper
+      modules={[Navigation, Pagination]}
+      navigation
+      pagination={{ clickable: true }}
+      spaceBetween={20}
+      slidesPerView={3}
+      onSlideChange={() => console.log('slide change')}
+      onSwiper={(swiper) => console.log(swiper)}
+      className={cl.carousel}
     >
-      {imagesArr&& Object.keys(imagesArr) && imagesArr.map(image =>{
+     {imagesArr&& Object.keys(imagesArr) && imagesArr.map(image =>{
         return(
-          <swiper-slide><img src={image} alt="" /></swiper-slide>
+          <SwiperSlide key={image}><img src={image} alt="" /></SwiperSlide>
         )
       })}
-    </swiper-container>
+    </Swiper>
+     
+  
   );
 };
 

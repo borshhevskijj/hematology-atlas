@@ -1,0 +1,16 @@
+.carousel img{
+    width: 100%;
+    min-width: 100%;
+    aspect-ratio: 1 / 1;
+}
+.carousel .swiper-button-prev,.carousel .swiper-button-next{
+    color: #AC63DA!important;
+    background-color: red;
+}
+.carousel .swiper-button-disabled{
+    background-color: red;
+    color: #FFFFFF!important;
+}
+.sample-slider .swiper-pagination-bullet{
+    background-color: red;
+}
