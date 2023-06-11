@@ -1,0 +1,45 @@
+.content{
+    display: flex;
+    gap: 13px;
+}
+.imgWrapper{
+    width: 100%;
+}
+.imgWrapper img{
+    width: 100%;
+}
+.imgWrapperToLeft{
+    position: relative;
+    right: 200px;
+}
+
+.content h3{
+    width: 100%;
+}
+.content article {
+    display: flex;
+    flex-flow: row wrap;
+}
+article {
+    width: calc(100%/3);
+    padding: 0 10px;
+    gap: 50px;
+}
+.contentWrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+.dates{
+    width: 50%;
+    flex-direction: column-reverse;
+    align-items: flex-end;
+}
+.contentWrapper p {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+.contentWrapper time {
+    font-size: 30px;
+}

@@ -30,6 +30,7 @@ body{
     padding: 0 120px;
     font-size: 15px;
     font-family: 'Raleway', sans-serif;
+    font-feature-settings: 'pnum' on, 'lnum' on;
     scroll-behavior: smooth;
 }
 

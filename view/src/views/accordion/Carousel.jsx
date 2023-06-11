@@ -12,7 +12,7 @@ const Carousel = ({imagesArr}) => {
       <Swiper
       modules={[Navigation, Pagination]}
       navigation
-      pagination={{ clickable: true }}
+      pagination={{type:'progressbar'}}
       spaceBetween={20}
       slidesPerView={3}
       onSlideChange={() => console.log('slide change')}

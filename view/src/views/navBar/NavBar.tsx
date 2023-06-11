@@ -1,6 +1,7 @@
 import React from "react";
 import cl from "./navBar.module.css";
 import { HashLink as Link } from "react-router-hash-link";
+import subMenuIcon from "../../assets/icons/subMenuIcon.svg";
 
 interface Props {
   SubmenuRef: React.MutableRefObject<null | HTMLAnchorElement>;
@@ -27,6 +28,7 @@ const NavBar: React.FC<Props> = ({ isOpen, SubmenuRef }) => {
           <li className={cl.navBarRightPart}>
             <a href="#" ref={SubmenuRef}>
               Кроветворение
+              <img className={`${isOpen ? "" : cl.imgOpen}`} src={subMenuIcon} alt="open/close icon" />
             </a>
             <ul className={`${cl.submenu} ${isOpen ? cl.open : ""}`}>
               <li>
