@@ -28,6 +28,9 @@ function App() {
     if (!isSubMenuOpen && e.target !== NavBarSubmenuRef.current) {
       return;
     }
+    if (isSubMenuOpen && e.target === NavBarSubmenuRef.current) {
+      return setOpen(false);
+    }
     if (e.target === NavBarSubmenuRef.current) {
       return setOpen(true);
     }

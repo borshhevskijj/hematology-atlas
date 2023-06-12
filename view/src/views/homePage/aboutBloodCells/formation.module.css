@@ -1,0 +1,39 @@
+.content{
+    display: flex;
+    gap: 13px;
+    padding-bottom: 260px;
+}
+.content h3{
+    width: calc(100% / 3);
+}
+.imgWrapper {
+    position: relative;
+}
+article{
+    position: relative;
+}
+.imgWrapperToRight{
+    position: absolute;
+    position: absolute;
+    top: -180px;
+    left: 200px;
+}
+.imgWrapperToRight img {
+    mix-blend-mode: hard-light;
+    filter: drop-shadow(18px 3px 30px rgba(96, 5, 74, 0.33));
+}
+
+.content article {
+    display: flex;
+    flex-flow: row wrap;
+}
+.content article {
+    width: calc(100%/3);
+    padding: 0 10px;
+    gap: 60px;
+}
+.lastBlock p{
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
+}

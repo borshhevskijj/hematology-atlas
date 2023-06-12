@@ -1,6 +1,7 @@
 .content{
     display: flex;
     gap: 13px;
+    padding-bottom: 260px;
 }
 .imgWrapper{
     width: 100%;
@@ -20,7 +21,7 @@
     display: flex;
     flex-flow: row wrap;
 }
-article {
+.content article {
     width: calc(100%/3);
     padding: 0 10px;
     gap: 50px;
@@ -42,4 +43,23 @@ article {
 }
 .contentWrapper time {
     font-size: 30px;
+}
+
+
+@media (max-width:835px) {
+    .datesWrapper{
+        position: absolute;
+    }
+    .content h3{
+        position: relative;
+    top: -40px;
+    }
+    .content .dates{
+        position: relative;
+    top: 240px;
+    }
+    .content article{
+        width: calc(100%/2);
+
+    }
 }

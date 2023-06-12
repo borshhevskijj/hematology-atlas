@@ -1,0 +1,13 @@
+.content{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 13px;
+    padding-bottom: 260px;
+}
+.content h3{
+    width: calc(100%/3)
+}
+.content article{
+    width: calc(calc(100%/3) - 39px);
+    /* flex: 1 1 33; */
+}

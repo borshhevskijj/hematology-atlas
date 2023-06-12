@@ -1,4 +1,3 @@
-import React from "react";
 import cl from "./description.module.css";
 import img1 from "../../../assets/aboutBloodCells/descriptionImg1.png";
 import img2 from "../../../assets/aboutBloodCells/descriptionImg2.png";
@@ -6,7 +5,7 @@ import img2 from "../../../assets/aboutBloodCells/descriptionImg2.png";
 const Description = () => {
   return (
     <div className={cl.content}>
-      <article>
+      <article className={cl.datesWrapper}>
         <h3>1. Описание</h3>
         <div className={`${cl.contentWrapper} ${cl.dates}`}>
           <p>
