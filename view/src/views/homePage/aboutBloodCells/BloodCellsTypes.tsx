@@ -1,4 +1,5 @@
 import cl from "./bloodCellsTypes.module.css";
+import img from "../../../assets/aboutBloodCells/bloodTypesImg.png";
 const BloodCellsTypes = () => {
   return (
     <div className={cl.content}>
@@ -33,6 +34,9 @@ const BloodCellsTypes = () => {
           9–12 дней.
         </p>
       </article>
+      <div className={cl.bgImg}>
+        <img src={img} alt="" />
+      </div>
     </div>
   );
 };

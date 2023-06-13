@@ -14,10 +14,16 @@ export const Input: React.FC = () => {
   const [inputText, setInputText] = useState(sessionStorage.getItem("CellName") || "");
   const navigate = useNavigate();
 
+  const onPressEnterOnInput = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+      navigate(`/search/${inputText}`);
+    }
+  };
   return (
     <div className={cl.inputContainer}>
       <div className={cl.inputWrapper}>
         <input
+          onKeyDown={(e) => onPressEnterOnInput(e)}
           type="text"
           value={inputText}
           list="auto_complete"
@@ -26,7 +32,7 @@ export const Input: React.FC = () => {
         />
         <img src={searchIcon} alt="searchIcon" />
       </div>
-      <button onClick={() => navigate(`/search/${inputText}`)}>Поиск</button>
+      {/* <button onClick={() => navigate(`/search/${inputText}`)}>Поиск</button> */}
       <AutoComplete />
     </div>
   );

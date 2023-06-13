@@ -1,6 +1,7 @@
 import { Input } from "../../search/Input";
 import cl from "./main.module.css";
 import img from "../../../assets/mainScreen/mainScreenHQ.webp";
+import img2 from "../../../assets/mainScreen/mainScreenImg2.png";
 const Main = () => {
   return (
     <section className={cl.main}>
@@ -16,10 +17,17 @@ const Main = () => {
             Предоставляем полезную информацию и визуальные материалы для обучения, исследований и практической работы
             в гематологии.
           </p>
-          <Input />
+          <p>
+            Гемопоэз - процесс образования крови в костном мозге. Мы описываем его стадии и развитие клеток крови, таких
+            как эритроциты, лейкоциты и тромбоциты. Предоставляем информацию о роли клеток и факторов роста, влияющих на
+            гемопоэз.
+          </p>
         </div>
-        <div className={cl.imageWrapper}>
+        <div className={cl.bigImageWrapper}>
           <img src={img} alt="image" />
+        </div>
+        <div className={cl.smallImageWrapper}>
+          <img src={img2} alt="image" />
         </div>
       </div>
     </section>

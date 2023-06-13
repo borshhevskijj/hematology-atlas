@@ -2,6 +2,7 @@ import React from "react";
 import cl from "./navBar.module.css";
 import { HashLink as Link } from "react-router-hash-link";
 import subMenuIcon from "../../assets/icons/subMenuIcon.svg";
+import { Input } from "../search/Input";
 
 interface Props {
   SubmenuRef: React.MutableRefObject<null | HTMLAnchorElement>;
@@ -13,23 +14,21 @@ const NavBar: React.FC<Props> = ({ isOpen, SubmenuRef }) => {
     <header id="main">
       <nav>
         <ul>
-          <div className={cl.navBarLeftPart}>
-            <li>
-              <Link to="/#main">Главная</Link>
-            </li>
-            <li>
-              <Link to="/#aboutProject">О проекте</Link>
-            </li>
-            <li>
-              <Link to="/#aboutBloodCells">Полезная информация</Link>
-            </li>
-          </div>
-
-          <li className={cl.navBarRightPart}>
+          <li>
+            <Link to="/#main">Главная</Link>
+          </li>
+          <li>
+            <Link to="/#aboutProject">О проекте</Link>
+          </li>
+          <li>
+            <Link to="/#aboutBloodCells">Полезная информация</Link>
+          </li>
+          <li className={cl.submenuBnt}>
             <a href="#" ref={SubmenuRef}>
               Кроветворение
               <img className={`${isOpen ? "" : cl.imgOpen}`} src={subMenuIcon} alt="open/close icon" />
             </a>
+            {/* ---------------- */}
             <ul className={`${cl.submenu} ${isOpen ? cl.open : ""}`}>
               <li>
                 <Link to={`hematopoiesis/lymphopoiesis`}>Лимфопоэз</Link>
@@ -54,6 +53,7 @@ const NavBar: React.FC<Props> = ({ isOpen, SubmenuRef }) => {
               </li>
             </ul>
           </li>
+          <Input />
         </ul>
       </nav>
     </header>

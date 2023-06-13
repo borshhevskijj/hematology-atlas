@@ -4,59 +4,57 @@ header{
 nav ul {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   min-height: 50px;
+  position: relative;
 }
 nav ul li > *{
   padding: 7px;
 }
-.navBarLeftPart{
-    display: flex;
-}
-.navBarLeftPart li:not(:last-child){
-  margin-right: 145px;
-}
 
-.navBarRightPart a {
+.submenuBnt {
   /* cursor: pointer; */
   position: relative;
-  z-index: 2;
+  z-index:34;
+}
+.submenuBnt a{
+  position: relative;
+  z-index: 34;
 }
 
-.navBarRightPart img{
+.submenuBnt img{
   position: relative;
   left: 5px;
   transition: transform .3s cubic-bezier(0.165, 0.84, 0.44, 1) ;
 }
 
-.navBarRightPart .imgOpen{
+.submenuBnt .imgOpen{
     transform:rotate(180deg);
 }
 
 
 .submenu {
-  display: block;
   position: absolute;
+  padding: 90px 30px 30px 30px;
   z-index: 1;
-  top: -500px;
-  right: 100px;
-  padding: 0;
+  top: -530px;
   transition: all .4s cubic-bezier(0.165, 0.84, 0.44, 1);
-
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  right: -70px;
+  left: -75px;
+  z-index: 33;
+  background: rgba(6, 6, 6, 0.23);
+  box-shadow: inset 0px 1px 40px rgba(248, 230, 250, 0.2);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  border-radius: 0px 0px 15px 15px;
+  opacity: 0.98;
   }
 
-  .submenu.open::after{
-    content: '';
-    position: absolute;
-    top: -30%;
-    left: -15%;
-    width: 130%;
-    height: 160%;
-    background: rgba(6, 6, 6, 0.23);
-    opacity: 0.98;
-    box-shadow: inset 0px 1px 40px rgba(248, 230, 250, 0.2);
-    -webkit-backdrop-filter: blur(5px);
-    backdrop-filter: blur(5px);
-    border-radius: 0px 0px 15px 15px;
+  .submenu.open{
+    transform: translateY(465px);
   }
 
 
@@ -64,9 +62,3 @@ nav ul li > *{
     padding: 10px 0px;
   }
   
- .submenu.open{
-    transform: translateY(550px);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }

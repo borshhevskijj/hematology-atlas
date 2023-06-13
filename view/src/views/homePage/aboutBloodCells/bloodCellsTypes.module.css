@@ -1,13 +1,25 @@
 .content{
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
     gap: 13px;
     padding-bottom: 260px;
 }
 .content h3{
-    width: calc(100%/3)
+    width: calc(calc(100%/3) - 13px);
+}
+.content h4{
+    margin-bottom: 18px;
 }
 .content article{
-    width: calc(calc(100%/3) - 39px);
-    /* flex: 1 1 33; */
+    width: calc(calc(100%/3) - 13px);
+}
+.content p {
+    padding-bottom: 15px;
+}
+.bgImg{
+    position: absolute;
+    bottom: -240px;
+    left: -240px;
 }
