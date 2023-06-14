@@ -5,7 +5,7 @@ import AboutBloodCells from "./aboutBloodCells/AboutBloodCells";
 const HomePage = () => {
   return (
     <>
-      {/* <Main /> */}
+      <Main />
       <AboutProject />
       <AboutBloodCells />
     </>

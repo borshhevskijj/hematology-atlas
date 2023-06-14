@@ -34,8 +34,8 @@ header,section{
     padding: 0 120px;
     /* margin: 0 120px; */
 }
-p{
-    line-height: 18px;
+p,li{
+    line-height: 130%;
 }
 h1,h2{
     font-size: 105px;

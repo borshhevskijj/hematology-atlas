@@ -10,4 +10,5 @@
 .cellDescription li:last-child  {
     margin-left:-15px ;
     padding-top: 40px;
+    list-style: none;
 }
