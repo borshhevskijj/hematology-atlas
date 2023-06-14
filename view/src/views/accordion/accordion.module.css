@@ -21,7 +21,7 @@
     padding: 0px;
 }
 
-.accordion ul{
+/* .accordion ul{
     padding-left: 15px;
     padding-top: 60px;
     list-style: decimal;
@@ -33,6 +33,5 @@
 .accordion ul li:last-child  {
     margin-left:-15px ;
     padding-top: 40px;
-}
+} */
 
-/* .accordionHeader span{} */

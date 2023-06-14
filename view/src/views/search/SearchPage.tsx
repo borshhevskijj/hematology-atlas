@@ -55,7 +55,16 @@ const SearchPage = () => {
     return <div>{err}</div>;
   }
 
-  return <div>{data && Object.keys(data).length && <DisplayCells data={data} />}</div>;
+  return (
+    <section>
+      {data && Object.keys(data).length && (
+        <>
+          <h2 style={{ paddingBottom: 0 }}>{data.name}</h2>
+          <DisplayCells data={data} />
+        </>
+      )}
+    </section>
+  );
 };
 
 export default SearchPage;

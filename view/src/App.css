@@ -24,7 +24,6 @@ html, body {
  }
 body{
     position: relative;
-    /* padding: 0 120px; */
     font-size: 15px;
     font-family: 'Raleway', sans-serif;
     font-feature-settings: 'pnum' on, 'lnum' on;
@@ -32,7 +31,8 @@ body{
     overflow-y: scroll;
 }
 header,section{
-    margin: 0 120px;
+    padding: 0 120px;
+    /* margin: 0 120px; */
 }
 p{
     line-height: 18px;

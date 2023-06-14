@@ -34,9 +34,9 @@ const BloodCellsTypes = () => {
           9–12 дней.
         </p>
       </article>
-      <div className={cl.bgImg}>
+      {/* <div className={cl.bgImg}>
         <img src={img} alt="" />
-      </div>
+      </div> */}
     </div>
   );
 };

@@ -1,0 +1,13 @@
+.cellDescription {
+    padding-left: 15px;
+    padding-top: 60px;
+    list-style: decimal;
+}
+.cellDescription li{
+    padding-bottom: 10px;
+}
+
+.cellDescription li:last-child  {
+    margin-left:-15px ;
+    padding-top: 40px;
+}

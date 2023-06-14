@@ -3,6 +3,8 @@ import cl from "./aboutBloodCells.module.css";
 import Description from "./Description";
 import Formation from "./Formation";
 import BloodCellsTypes from "./BloodCellsTypes";
+import img from "../../../assets/aboutBloodCells/bloodTypesImg.png";
+
 const AboutBloodCells = () => {
   return (
     <section className={cl.aboutBloodCells} id="aboutBloodCells">
@@ -13,6 +15,9 @@ const AboutBloodCells = () => {
       <Description />
       <Formation />
       <BloodCellsTypes />
+      <div className={cl.bgImg}>
+        <img src={img} alt="" />
+      </div>
     </section>
   );
 };

@@ -2,3 +2,13 @@
     display: flex;
     flex-direction: column;
 }
+.aboutBloodCells{
+    position: relative;
+    overflow: hidden;
+}
+.bgImg{
+    position: absolute;
+    bottom: -270px;
+    left: -120px;
+
+}
