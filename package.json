@@ -1,0 +1,7 @@
+{
+    "scripts": {
+      "dev": "run-p server:dev view:start",
+      "server:dev": "cd server && npm run dev",
+      "view:start": "cd view && npm start"
+    }
+  }

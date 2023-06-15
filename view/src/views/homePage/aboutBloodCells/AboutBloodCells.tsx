@@ -7,7 +7,7 @@ import img from "../../../assets/aboutBloodCells/bloodTypesImg.png";
 
 const AboutBloodCells = () => {
   return (
-    <section className={cl.aboutBloodCells} id="aboutBloodCells">
+    <section className={`${cl.aboutBloodCells} container`} id="aboutBloodCells">
       <h2>
         <span>Немного о клетках</span>
         <span>крови</span>

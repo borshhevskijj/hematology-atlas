@@ -12,27 +12,30 @@
 }
 
 .contentWrapper p{
-    padding: 0 110px 10px 0;
+    padding: 0 40px 10px 0;
 }
 .contentWrapper{
-    width: 35%;
+    /* width: 35%; */
+    width: calc(29% + 11vw);
 }
 .bigImageWrapper{
     position: relative;
-    width: 733px;
-    height:745px;
-    min-width: 733px;
-    min-height:745px;
+    /* width: 733px; */
+    width: 54vw;
+    /* height:745px; */
+    max-width: 733px;
+    max-height:745px;
     top: -140px;
 }
 .smallImageWrapper{
     position: absolute;
-    right: -220px;
-    top: -190px;
+    right: -16%;
+    top: -193px;
+    width: 24vw;
 }
 
-.bigImageWrapper img{
+.bigImageWrapper img,.smallImageWrapper img{
     width: 100%;
-    height: 100%;
+    /* height: 100%; */
     filter: drop-shadow(3px 32px 180px rgba(132, 1, 91, 0.53));
 }

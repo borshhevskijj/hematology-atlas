@@ -4,7 +4,7 @@ import img from "../../../assets/mainScreen/mainScreenHQ.webp";
 import img2 from "../../../assets/mainScreen/mainScreenImg2.png";
 const Main = () => {
   return (
-    <section className={cl.main}>
+    <section className={`${cl.main} container`}>
       <h1>
         <span>гематологический</span>
         <span>атлас</span>

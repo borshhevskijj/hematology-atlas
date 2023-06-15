@@ -11,7 +11,7 @@ interface Props {
 
 const NavBar: React.FC<Props> = ({ isOpen, SubmenuRef }) => {
   return (
-    <header id="main">
+    <header className="container" id="main">
       <nav>
         <ul>
           <li>

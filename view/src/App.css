@@ -9,9 +9,6 @@
 *::before, *::after{
     box-sizing: border-box;
 }
-/* #root{
-    overflow: hidden;
-} */
 html, body {
     height: 100%;
     margin: 0;
@@ -30,15 +27,47 @@ body{
     scroll-behavior: smooth;
     overflow-y: scroll;
 }
-header,section{
-    padding: 0 120px;
-    /* margin: 0 120px; */
+.container {
+    width: 100%;
+    max-width: 1700px;
+    box-sizing: inherit;
+    display: block;
+    padding-left: 120px;
+    padding-right:120px;
 }
+@media (max-width: 1200px) {
+    .container {
+        padding-left: 60px;
+        padding-right: 60px;
+      }
+  }
+  @media (max-width: 900px) {
+      .container {
+          padding-left: 30px;
+          padding-right: 30px;
+        }
+    }
+    @media (max-width: 400px) {
+      .container {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+    }
+@media (min-width: 1800px) {
+    .container {
+      /* max-width: none; */
+      margin: auto;
+    }
+  }
+
+
+
+
 p,li{
     line-height: 130%;
 }
 h1,h2{
-    font-size: 105px;
+    font-size: calc(7.1vw + 2px);
     line-height: 100px;
     font-family: 'Cormorant Garamond', serif;
     text-transform: uppercase;
@@ -51,14 +80,14 @@ h2{
 #aboutProject{
     padding-bottom: 180px;
 }
-@media (max-width:835px) {
+@media (max-width:900px) {
     body{
-        padding-left:30px ;
-        padding-right:30px ;
+        /* padding-left:30px ;
+        padding-right:30px ; */
         font-size: 14px;
     }
     h1{
-        font-size: 70px;
+        /* font-size: 70px; */
     }
     h2{
         font-size: 60px;

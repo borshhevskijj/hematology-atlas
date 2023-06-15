@@ -57,7 +57,7 @@ const SearchPage = () => {
   }
 
   return (
-    <section className={cl.searchPage}>
+    <section className={`${cl.searchPage} container`}>
       {data && Object.keys(data).length && (
         <>
           <h2>{data.name}</h2>
