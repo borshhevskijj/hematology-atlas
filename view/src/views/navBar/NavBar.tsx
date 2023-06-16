@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import cl from "./navBar.module.css";
 import { HashLink as Link } from "react-router-hash-link";
 import subMenuIcon from "../../assets/icons/subMenuIcon.svg";
@@ -10,9 +10,15 @@ interface Props {
 }
 
 const NavBar: React.FC<Props> = ({ isOpen, SubmenuRef }) => {
+  const [isBrgMenuOpen, setBrgMenuState] = useState(false);
+  console.log(isBrgMenuOpen);
+
   return (
     <header className="container" id="main">
-      <nav>
+      <div onClick={() => setBrgMenuState(!isBrgMenuOpen)} className={`${cl.brgMenu} ${isBrgMenuOpen ? cl.open : ""}`}>
+        <span />
+      </div>
+      <nav className={`${isBrgMenuOpen ? cl.menuActive : cl.menu}`}>
         <ul>
           <li>
             <Link to="/#main">Главная</Link>

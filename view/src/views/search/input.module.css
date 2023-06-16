@@ -12,7 +12,7 @@
     border: 0;
   border-radius: 24px;
   height: 45px;
-  padding: 6px 40px;
+  padding: 6px 15px 6px 40px;
 }
 .inputContainer input:focus {
     outline: none;

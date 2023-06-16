@@ -12,7 +12,57 @@ nav ul {
 nav ul li > *{
   padding: 7px;
 }
+/* ------------ */
 
+
+
+.brgMenu{
+  display: none;
+  width: 30px;
+  height: 30px;
+  position: relative;
+}
+.brgMenu::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 30px;
+  height: 3px;
+  background-color: black;
+}
+
+.brgMenu span{
+  position: absolute;
+  top: 50%;
+  width: 30px;
+  height: 3px;
+  background-color: black;
+}
+
+.brgMenu::after{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 30px;
+  height: 3px;
+  background-color: black;
+}
+
+@media (max-width:840px) {
+  .brgMenu{
+    display: block;
+  }
+  .menu {
+    transform: translateY(-200px);
+  }
+
+  .menuActive {
+    transform: translateY(0px);
+  }
+
+}
+
+/* ----------------------- */
 .submenuBnt {
   /* cursor: pointer; */
   position: relative;
