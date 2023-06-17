@@ -11,7 +11,6 @@ interface Props {
 
 const NavBar: React.FC<Props> = ({ isOpen, SubmenuRef }) => {
   const [isBrgMenuOpen, setBrgMenuState] = useState(false);
-  console.log(isBrgMenuOpen);
 
   return (
     <header className="container" id="main">

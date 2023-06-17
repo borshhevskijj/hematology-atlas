@@ -1,6 +1,10 @@
 header{
   padding-top: 25px;
   padding-bottom: 25px;
+
+}
+nav{
+  transition: all .3s ease-in;
 }
 nav ul {
   display: flex;
@@ -48,19 +52,6 @@ nav ul li > *{
   background-color: black;
 }
 
-@media (max-width:840px) {
-  .brgMenu{
-    display: block;
-  }
-  .menu {
-    transform: translateY(-200px);
-  }
-
-  .menuActive {
-    transform: translateY(0px);
-  }
-
-}
 
 /* ----------------------- */
 .submenuBnt {
@@ -112,4 +103,54 @@ nav ul li > *{
   .submenu li{
     padding: 10px 0px;
   }
+  @media (max-width:840px) {
+    header{
+      padding-left: 0!important;
+      padding-right:0!important ;
+    }
   
+    .brgMenu{
+      display: block;
+      z-index: 3;
+      left: 30px;
+    }
+    .menu {
+      position: absolute;
+      transform: translateY(-105vh);
+      opacity: .7;
+      width: 100%;
+      height: 100%;
+      background: #d64b4b;
+      z-index: 2;
+    }
+    
+    .menuActive {
+      position: absolute;
+      background: #d64b4b;
+      opacity: 1;
+      top: 0px;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      z-index: 2;
+      transition: .3s all ease-in;
+      transform: translateY(0px);
+    }
+     .menuActive {
+      overflow: hidden;
+       position: fixed;
+    }
+    nav > ul {
+      display: flex;
+      flex-direction: column;
+      gap: 160px;
+    }
+    .submenu{
+      padding: 30px;
+      z-index: 3;
+      top: -100vh;
+    }
+    .submenu.open{
+      transform: translateY(100vh);
+    }
+  }
