@@ -17,7 +17,7 @@ const NavBar: React.FC<Props> = ({ isOpen, SubmenuRef }) => {
       <div onClick={() => setBrgMenuState(!isBrgMenuOpen)} className={`${cl.brgMenu} ${isBrgMenuOpen ? cl.open : ""}`}>
         <span />
       </div>
-      <nav className={`${isBrgMenuOpen ? cl.menuActive : cl.menu}`}>
+      <nav className={`${isBrgMenuOpen ? `${cl.menuActive} ${cl.menu}` : cl.menu}`}>
         <ul>
           <li>
             <Link to="/#main">Главная</Link>
