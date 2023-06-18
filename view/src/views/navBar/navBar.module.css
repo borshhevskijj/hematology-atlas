@@ -22,57 +22,47 @@ nav ul li > *{
 
 .brgMenu{
   display: none;
-  width: 30px;
-  height: 30px;
+  width: 60px;
+  height: 60px;
   position: relative;
   transition: all .3s ease-in-out ;
 }
-.brgMenu::before{
-  content: '';
-  position: absolute;
-  top: 0;
-  width: 30px;
-  height: 3px;
-  background-color: black;
-  transform: rotate(0);
-  transition: all .3s ease-in-out ;
-  
 
+.brgMenu::before,.brgMenu span,.brgMenu::after{
+  position: absolute;
+  width: 56px;
+  height: 3px;
+  background-color: #FFFFFF;
+  transition: all .3s ease-in-out ;
 }
 
+.brgMenu::before{
+  content: '';
+  top: 25%;
+  transform: rotate(0);
+}
 .brgMenu span{
-  position: absolute;
-  top: 35%;
-  width: 30px;
-  height: 3px;
-  background-color: black;
+  top: 50%;
   transform: scaleY(1);
-  transition: all .3s ease-in-out ;
 
 }
 
 .brgMenu::after{
   content: '';
-  position: absolute;
-  bottom: 25%;
-  width: 30px;
-  height: 3px;
-  background-color: black;
-  /* transform: rotate(0); */
+  bottom: 20%;;
   opacity: 1;
-  transition: all .3s ease-in-out ;
 }
 
 
 .brgMenu.open::before{
   transform: rotate(-45deg);
-  margin-top: 14px;
+  margin-top: 15px;
   transition: all .3s ease-in-out ;
 
 }
 .brgMenu.open span{
   transform: rotate(45deg);
-  margin-top: 3px;
+
       transition: all .3s ease-in-out ;
 }
 .brgMenu.open::after{
@@ -83,23 +73,23 @@ nav ul li > *{
 
 
 /* ----------------------- */
-.submenuBnt {
+.submenuBtn {
   /* cursor: pointer; */
   position: relative;
   z-index:34;
 }
-.submenuBnt a{
+.submenuBtn a{
   position: relative;
   z-index: 34;
 }
 
-.submenuBnt img{
+.submenuBtn img{
   position: relative;
   left: 5px;
   transition: transform .3s cubic-bezier(0.165, 0.84, 0.44, 1) ;
 }
 
-.submenuBnt .imgOpen{
+.submenuBtn .imgOpen{
     transform:rotate(180deg);
 }
 
@@ -146,7 +136,8 @@ nav ul li > *{
     .brgMenu{
       display: block;
       z-index: 3;
-      left: 30px;
+      left: calc(100% - (60px + 30px)); /* ширина брг меню + отступ контейнера */
+
     }
     .menu, .menuActive{
       width: 100%;
@@ -165,7 +156,7 @@ nav ul li > *{
     .menuActive {
       position: fixed;
       overflow: scroll;
-      background: #d64b4b;
+      background: #1A1719;
       opacity: 1;
       transition: .3s all ease-in;
       transform: translateY(0px);
@@ -185,5 +176,9 @@ nav ul li > *{
       z-index: 3;
       top: -20px;
       padding-top: 100px;
+    }
+    .submenuBtn img{
+      left: 25px;
+      width: 35px;
     }
   }

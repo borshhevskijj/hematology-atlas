@@ -39,3 +39,9 @@
     /* height: 100%; */
     filter: drop-shadow(3px 32px 180px rgba(132, 1, 91, 0.53));
 }
+
+@media (max-width:840px) {
+    .main{
+        padding-top: 10px;
+    }
+}

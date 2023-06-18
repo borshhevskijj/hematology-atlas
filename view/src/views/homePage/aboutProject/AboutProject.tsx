@@ -19,15 +19,8 @@ const AboutProject = () => {
           </div>
         </div>
 
-        <div className={`${cl.contentWrapper} ${cl.contentWrapperRight}`}>
-          <div>
-            <img src={img2} alt="123" />
-          </div>
-          {/* <p>
-            Гемопоэз - процесс образования крови в костном мозге. Мы описываем его стадии и развитие клеток крови, таких
-            как эритроциты, лейкоциты и тромбоциты. Предоставляем информацию о роли клеток и факторов роста, влияющих на
-            гемопоэз.
-          </p> */}
+        <div className={cl.imgWrapper}>
+          <img src={img2} alt="123" />
         </div>
       </div>
     </section>

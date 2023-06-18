@@ -8,14 +8,30 @@
 .contentWrapper{
     display: flex;
     flex-direction: column;
+    width: calc(24% + 10vw);
 }
 
-
-.contentWrapperRight p{
-    padding-top: 40px;
-    width: 50%;
+.imgWrapper{
+    width: 100%;
+}
+.imgWrapper img {
+    width: 100%;
 }
 .contentWrapperLeft p{
     margin-bottom: 70px;
     padding-right: 40px;
+}
+
+@media (max-width: 900px) {
+    .contentWrapper{
+    width: 45%;
+    }
+    .contentWrapper img{
+    max-width: 255px;
+    }
+
+    .imgWrapper{
+    width: 55%;
+    }
+
 }

@@ -28,7 +28,7 @@ const NavBar: React.FC<Props> = ({ isOpen, SubmenuRef }) => {
           <li>
             <Link to="/#aboutBloodCells">Полезная информация</Link>
           </li>
-          <li className={cl.submenuBnt}>
+          <li className={cl.submenuBtn}>
             <a href="#" ref={SubmenuRef}>
               Кроветворение
               <img className={`${isOpen ? "" : cl.imgOpen}`} src={subMenuIcon} alt="open/close icon" />
