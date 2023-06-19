@@ -23,3 +23,17 @@
     bottom: -240px;
     left: -240px;
 }
+@media (max-width:900px) {
+    .content{
+        justify-content: flex-start;
+        padding-bottom: 120px;
+    }
+    .content article{
+        width: calc(calc(100%/2) - 13px);
+    }
+    .content h3{
+        width: 100%;
+        position: absolute;
+        top: -39px;
+    }
+}

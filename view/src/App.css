@@ -47,7 +47,7 @@ body{
           padding-right: 30px;
         }
     }
-    @media (max-width: 400px) {
+    @media (max-width: 768px) {
       .container {
         padding-left: 20px;
         padding-right: 20px;
@@ -67,18 +67,27 @@ p,li{
     line-height: 130%;
 }
 h1,h2{
-    font-size: calc(7.1vw + 2px);
+    font-size: calc(7.1vw + 9px);
     line-height: 100px;
     font-family: 'Cormorant Garamond', serif;
     text-transform: uppercase;
 }
 h2{
     font-size: 75px;
+    /* font-size: calc(7.1vw + 2px); */
     line-height: 91px;
     padding-bottom: 100px;
 }
+h3{
+    font-size: 12px;
+}
 #aboutProject{
     padding-bottom: 180px;
+}
+@media (max-width:1100px) {
+    h2{
+        font-size: 60px;
+    }
 }
 @media (max-width:900px) {
     body{
@@ -86,13 +95,30 @@ h2{
         padding-right:30px ; */
         font-size: 14px;
     }
-    h1{
-        /* font-size: 70px; */
-    }
     h2{
-        font-size: 60px;
+        font-size: calc(7.1vw + 2px);
     }
     p{
         line-height: 16.44px;
     }
 }
+@media (max-width:768px) {
+    body{
+        /* padding-left:30px ;
+        padding-right:30px ; */
+    }
+    h1,h2{
+        line-height: 38.75px;
+    }
+    h1{
+        font-size: calc(5.7vw + 9px);  
+      }
+    h2{
+        font-size: 30px;
+        /* font-size: calc(7.1vw + 2px); */
+    }
+    p{
+        line-height: 16px;
+    }
+}
+/* >768px */

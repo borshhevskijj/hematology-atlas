@@ -10,5 +10,13 @@
     position: absolute;
     bottom: -270px;
     left: -120px;
-
+}
+@media (max-width:900px) {
+    .bgImg{
+        width: 50%;
+        left: 60%;
+    }
+    .bgImg img{
+        width: 100%;
+    }
 }

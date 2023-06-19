@@ -1,5 +1,6 @@
 .content{
     display: flex;
+    position: relative;
     gap: 13px;
     padding-bottom: 260px;
 }
@@ -46,9 +47,12 @@
 }
 
 
-@media (max-width:835px) {
+@media (max-width:900px) {
     .datesWrapper{
         position: absolute;
+        height: 100%;
+        /* gap: 250px; */
+        top: -40px;
     }
     .content h3{
         position: relative;
@@ -56,10 +60,14 @@
     }
     .content .dates{
         position: relative;
-    top: 240px;
+        justify-content: flex-end;
     }
     .content article{
         width: calc(100%/2);
-
+    }
+    .imgWrapperToLeft{
+        right: -200px;
+        width: 182px;
+        height: 182px;
     }
 }

@@ -1,5 +1,4 @@
 import cl from "./bloodCellsTypes.module.css";
-import img from "../../../assets/aboutBloodCells/bloodTypesImg.png";
 const BloodCellsTypes = () => {
   return (
     <div className={cl.content}>

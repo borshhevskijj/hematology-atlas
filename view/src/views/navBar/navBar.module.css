@@ -1,7 +1,6 @@
 header{
   padding-top: 25px;
   padding-bottom: 25px;
-
 }
 nav{
   transition: all .3s ease-in;
@@ -128,6 +127,9 @@ nav ul li > *{
     padding: 10px 0px;
   }
   @media (max-width:840px) {
+    nav{
+      display: none;
+    }
     header{
       padding-left: 0!important;
       padding-right:0!important ;
