@@ -29,9 +29,28 @@
     .contentWrapper img{
     max-width: 255px;
     }
-
     .imgWrapper{
     width: 55%;
     }
-
+}
+@media (max-width:768px) {
+ .aboutProject h2 {
+    display: flex;
+    justify-content: center;
+ }
+ .content{
+    flex-direction: column;
+    align-items: center;
+    gap: 7vw;
+ }
+ .content div{
+    width: 100%;
+ }
+ .contentWrapper div{
+    display: none;
+ }
+ .contentWrapper p{
+    margin-bottom:0px;
+    padding-right: 0;
+ }
 }

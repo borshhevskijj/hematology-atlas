@@ -34,7 +34,7 @@ const Description = () => {
           <img src={img1} alt="qwe" />
         </div>
       </article>
-      <article>
+      <article className={cl.lastBlock}>
         <div className={cl.contentWrapper}>
           <p>
             Существует три основных типа клеток крови: эритроциты (красные кровяные клетки), лейкоциты (белые кровяные
