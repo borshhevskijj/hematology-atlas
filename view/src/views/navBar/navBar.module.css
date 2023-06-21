@@ -21,18 +21,18 @@ nav ul li > *{
 
 .brgMenu{
   display: none;
-  width: 60px;
-  height: 60px;
-  position: relative;
-  transition: all .3s ease-in-out ;
+    width: 38px;
+    height: 38px;
+    position: relative;
+    transition: all .3s ease-in-out;
 }
 
 .brgMenu::before,.brgMenu span,.brgMenu::after{
   position: absolute;
-  width: 56px;
-  height: 3px;
+  width: 38px;
+  height: 2.5px;
   background-color: #FFFFFF;
-  transition: all .3s ease-in-out ;
+  transition: all .3s ease-in-out;
 }
 
 .brgMenu::before{
@@ -43,7 +43,6 @@ nav ul li > *{
 .brgMenu span{
   top: 50%;
   transform: scaleY(1);
-
 }
 
 .brgMenu::after{
@@ -55,7 +54,7 @@ nav ul li > *{
 
 .brgMenu.open::before{
   transform: rotate(-45deg);
-  margin-top: 15px;
+  margin-top: 9.7px;
   transition: all .3s ease-in-out ;
 
 }
@@ -138,8 +137,7 @@ nav ul li > *{
     .brgMenu{
       display: block;
       z-index: 3;
-      left: calc(100% - (60px + 30px)); /* ширина брг меню + отступ контейнера */
-
+      left: calc(100% - (38px + 20px)); /* ширина брг меню + отступ контейнера */
     }
     .menu, .menuActive{
       width: 100%;
@@ -183,4 +181,8 @@ nav ul li > *{
       left: 25px;
       width: 35px;
     }
+  }
+  
+  @media (max-width:768px) {
+
   }

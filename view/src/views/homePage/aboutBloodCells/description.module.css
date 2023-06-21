@@ -86,7 +86,7 @@
         position: absolute;
     }
     .imgWrapperToLeft{
-        top: 15%;
+        top: 12%;
         left: 65%;
     }
     .lastBlock .imgWrapper {
@@ -113,10 +113,14 @@
     }
 
     .dates{
-        width: 30%;
+        width: 36%;
     }
 }
-
+@media (max-width:500px) {
+    .imgWrapperToLeft{
+        top: 15%;
+    }
+}
 @media (max-width:400px) {
     .lastBlock .imgWrapper {
         width: 160px;

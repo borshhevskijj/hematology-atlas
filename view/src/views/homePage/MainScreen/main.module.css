@@ -50,11 +50,11 @@
     .main{
         padding-bottom: 120px;
     }
-   .main h1{
-    font-size: 32px;
-   }
+    .main h1 :first-child{
+        padding-bottom: calc(3vw - 6px);
+    }
    .contentWrapper{
-    width: 60%;
+    width: 48%;
    }
    .bigImageWrapper {
         position: absolute;
@@ -70,6 +70,21 @@
     width: 161px;
     height: 160px;
    }
+}
+@media (max-width:535px) {
+.contentWrapper{
+    width: 57%;
+}
+.bigImageWrapper{
+    width: 224px;
+    min-width: auto;
+    left: 43%;
+}
+.smallImageWrapper{
+    width: 150px;
+    right: -24%;
+    top: -21%;
+}
 }
 @media (max-width:450px) {
     .smallImageWrapper{

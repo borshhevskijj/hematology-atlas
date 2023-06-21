@@ -9,6 +9,9 @@
 *::before, *::after{
     box-sizing: border-box;
 }
+h1,h2,h3,h4,time{
+    font-weight: 600;
+}
 html, body {
     height: 100%;
     margin: 0;
@@ -91,8 +94,6 @@ h3{
 }
 @media (max-width:900px) {
     body{
-        /* padding-left:30px ;
-        padding-right:30px ; */
         font-size: 14px;
     }
     h2{
@@ -103,10 +104,6 @@ h3{
     }
 }
 @media (max-width:768px) {
-    body{
-        /* padding-left:30px ;
-        padding-right:30px ; */
-    }
     h1,h2{
         line-height: 38.75px;
     }

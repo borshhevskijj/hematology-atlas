@@ -6,24 +6,24 @@ const Formation = () => {
   return (
     <div className={cl.content}>
       <h3>2. Образование</h3>
-      <article id="a" className={cl.contentWrapper}>
-        <p id="text1">
+      <article className={cl.contentWrapper}>
+        <p>
           Все кровяные клетки происходят из стволовых кроветворных (гематопоэтических) клеток, находящихся в костном
           мозге. Сначала они разделяются на популяции предшественников лимфоидных клеток и миелоидных клеток.
           Предшественники лимфоидных клеток дают начало натуральным киллерам, T-лимфоцитам и B-лимфоцитам.
           Предшественники миелоидных клеток развиваются в популяции мегакариоцитов (предшественников тромбоцитов),
           предшественников эритроцитов, тучных клеток и миелобластов.
         </p>
-        <div id="img1" className={`${cl.imgWrapper} ${cl.imgWrapperLeft}`}>
+        <div className={`${cl.imgWrapper} ${cl.imgWrapperLeft}`}>
           <img src={img2} alt="qwe" />
         </div>
       </article>
 
-      <article id="b" className={`${cl.contentWrapper} ${cl.lastBlock}`}>
-        <div id="img2" className={`${cl.imgWrapper} ${cl.imgWrapperToRight}`}>
+      <article className={`${cl.contentWrapper} ${cl.lastBlock}`}>
+        <div className={`${cl.imgWrapper} ${cl.imgWrapperToRight}`}>
           <img src={img1} alt="qwe" />
         </div>
-        <p id="text2">
+        <p>
           От миелобластов происходят базофилы, нейтрофилы, эозинофилы и моноциты. Образование эритроцитов (эритропоэз)
           стимулируется эритропоэтинами при нехватке кислорода в тканях. Содержание лейкоцитов в крови регулируется
           гормонами тимуса. В печени синтезируется тромбопоэтин, который стимулирует образование мегакариоцитов. Клетки

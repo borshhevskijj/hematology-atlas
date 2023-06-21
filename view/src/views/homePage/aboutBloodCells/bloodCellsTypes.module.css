@@ -37,3 +37,8 @@
         top: -39px;
     }
 }
+@media (max-width:768px) {
+    .content article{
+        width: 100%;
+    }
+}
