@@ -14,8 +14,8 @@ const Formation = () => {
           Предшественники миелоидных клеток развиваются в популяции мегакариоцитов (предшественников тромбоцитов),
           предшественников эритроцитов, тучных клеток и миелобластов.
         </p>
-        <div className={`${cl.imgWrapper} ${cl.imgWrapperLeft}`}>
-          <img src={img2} alt="qwe" />
+        <div className={`${cl.imgWrapper} ${cl.imgWrapperLeft} bRadius`}>
+          <img src={img2} alt="qwerty" />
         </div>
       </article>
 

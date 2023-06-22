@@ -83,6 +83,7 @@ nav ul li > *{
 
 .submenuBtn img{
   position: relative;
+  pointer-events:none;
   left: 5px;
   transition: transform .3s cubic-bezier(0.165, 0.84, 0.44, 1) ;
 }
@@ -126,9 +127,7 @@ nav ul li > *{
     padding: 10px 0px;
   }
   @media (max-width:840px) {
-    nav{
-      display: none;
-    }
+    
     header{
       padding-left: 0!important;
       padding-right:0!important ;
@@ -164,10 +163,10 @@ nav ul li > *{
     nav > ul {
       display: flex;
       flex-direction: column;
-      gap: 60px;
+      gap: 70px;
     }
     nav ul li:not(.submenu li){
-      font-size: 70px;
+      font-size: calc(6.8vw + 9px);
     }
 
     .submenu{
@@ -178,11 +177,16 @@ nav ul li > *{
       padding-top: 100px;
     }
     .submenuBtn img{
-      left: 25px;
-      width: 35px;
+      left: 3%;
+      width: 4vw;
     }
   }
   
-  @media (max-width:768px) {
-
+  @media (max-width:500px) {
+    nav ul li:not(.submenu li){
+      font-size: 32px;
+    }
+    nav > ul {
+      gap: 45px;
+    }
   }

@@ -48,11 +48,21 @@
 
 
 @media (max-width:900px) {
+    .contentWrapper{
+        padding-bottom: 30px;
+        gap: 33px   ;
+    }
+    .contentWrapper p{
+        gap: 24px;
+    }
     .datesWrapper{
         position: absolute;
         height: 100%;
         /* gap: 250px; */
         top: -40px;
+    }
+    .content{
+        padding-bottom: 140px;
     }
     .content h3{
         position: relative;
@@ -64,6 +74,7 @@
     }
     .content article{
         width: calc(100%/2);
+        padding: 0;
     }
     .imgWrapperToLeft{
         right: -200px;
@@ -100,7 +111,6 @@
         height: 100%;
     aspect-ratio: 2 / 1;
     object-fit: cover;
-    border-radius: 15px;
     }
     .content article {
         position: static;
@@ -125,8 +135,8 @@
     .lastBlock .imgWrapper {
         width: 160px;
         height: auto;
-        top: 31%;
-    left: 56%;
+        top: 35%;
+        left: 54%;
     }
     .lastBlock img {
         aspect-ratio: 0.4 / 0.65;

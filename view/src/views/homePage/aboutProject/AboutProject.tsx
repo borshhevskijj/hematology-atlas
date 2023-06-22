@@ -19,7 +19,7 @@ const AboutProject = () => {
           </div>
         </div>
 
-        <div className={cl.imgWrapper}>
+        <div className={`${cl.imgWrapper} bRadius`}>
           <img src={img2} alt="123" />
         </div>
       </div>

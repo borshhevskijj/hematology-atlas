@@ -1,4 +1,4 @@
-#aboutProject{
+.aboutProject{
     padding-bottom: 180px;
 }
 .content{
@@ -34,11 +34,16 @@
     }
 }
 @media (max-width:768px) {
+    .aboutProject{
+        padding-bottom: 280px;
+    }
  .aboutProject h2 {
     display: flex;
     justify-content: center;
+    padding-bottom: 60px;
  }
  .content{
+    position: relative;
     flex-direction: column;
     align-items: center;
     gap: 7vw;
@@ -47,7 +52,13 @@
     width: 100%;
  }
  .contentWrapper div{
-    display: none;
+    position: absolute;
+    width: 30vw;
+    max-width: 165px;
+    bottom: -140px;
+ }
+ .contentWrapper div img{
+    width: 100%;
  }
  .contentWrapper p{
     margin-bottom:0px;

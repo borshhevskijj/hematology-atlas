@@ -42,6 +42,8 @@
     .inputContainer{
         width: 55%;
         height: 65px;
+        min-width: 335px;
+
     }
     .inputContainer input{
         font-size: 18px;
@@ -49,5 +51,16 @@
     .inputWrapper img{
         top: 26px;
     }
-
+}
+@media (max-width:500px) {
+    .inputContainer{
+        /* width: 55%; */
+        height: 51px;
+    }
+    /* .inputContainer input{
+        font-size: 18px;
+    } */
+    .inputWrapper img{
+        top: 19px;
+    }
 }

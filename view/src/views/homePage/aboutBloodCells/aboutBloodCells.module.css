@@ -15,8 +15,17 @@
     .bgImg{
         width: 50%;
         left: 60%;
+        bottom: -120px;
     }
     .bgImg img{
         width: 100%;
     }
+}
+@media (max-width:450px) {
+    .bgImg{
+        width: 100%;
+        left: 0;
+        bottom: calc(-41vw - 3%);
+    }
+    
 }

@@ -42,6 +42,9 @@ article{
 }
 
 @media (max-width: 900px) {
+    .content{
+        padding-bottom: 140px;
+    }
     .imgWrapperLeft{
         width: 100%;
         height: 300px;

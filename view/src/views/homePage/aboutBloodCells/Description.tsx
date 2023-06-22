@@ -46,8 +46,8 @@ const Description = () => {
             и лейкоциты в совокупности называют форменными элементами крови.
           </p>
         </div>
-        <div className={cl.imgWrapper}>
-          <img src={img2} alt="qwe" />
+        <div className={`${cl.imgWrapper} bRadius`}>
+          <img src={img2} alt="qwerty" />
         </div>
       </article>
     </div>
