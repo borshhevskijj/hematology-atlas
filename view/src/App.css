@@ -65,9 +65,15 @@ body{
       margin: auto;
     }
   }
-
-
-
+/* ----------------- */
+.App{
+    min-height: 100vh;
+}
+.backgroungImg{
+    background-image: url('./assets/background/3DMorphLines.svg');
+    background-repeat: repeat;
+}
+/* ----------------- */
 
 p,li{
     line-height: 130%;
@@ -78,6 +84,7 @@ h1,h2{
     font-family: 'Cormorant Garamond', serif;
     text-transform: uppercase;
 }
+
 h2{
     font-size: 75px;
     /* font-size: calc(7.1vw + 2px); */

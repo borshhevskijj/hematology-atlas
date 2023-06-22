@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 // import { IBloodCell } from '../displayBloodCells/DisplayBloodCells';
 import Accordion from "../accordion/Accordion";
 import { useParams } from "react-router-dom";
+import PageNotFound from "../../components/errors/pageNotFound/PageNotFound";
 
 interface bloodCellImage {
   id: number;
@@ -63,7 +64,7 @@ const HematopoiesisType = () => {
     return <div>Loading...</div>;
   }
   if (error) {
-    return <div>{error}</div>;
+    return <PageNotFound children={<div>{error}</div>} />;
   }
   return (
     <section className="container" style={{ paddingBottom: 250, paddingTop: 50 }}>

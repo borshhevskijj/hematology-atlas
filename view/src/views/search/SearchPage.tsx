@@ -5,6 +5,7 @@ import Accordion from "../accordion/Accordion";
 import DisplayCells from "../../components/DisplayCells";
 import { useParams } from "react-router-dom";
 import cl from "./searchPage.module.css";
+import PageNotFound from "../../components/errors/pageNotFound/PageNotFound";
 
 const SearchPage = () => {
   const { name } = useParams();
@@ -53,7 +54,8 @@ const SearchPage = () => {
     return <div>loading...</div>;
   }
   if (err) {
-    return <div>{err}</div>;
+    // return <div>{err}</div>;
+    return <PageNotFound children={<div>{err}</div>} />;
   }
 
   return (

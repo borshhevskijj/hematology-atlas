@@ -4,7 +4,6 @@ import Accordion from "./views/accordion/Accordion";
 import { Link, Routes, Route } from "react-router-dom";
 import "./App.css";
 import { useLocation, useMatch, matchRoutes } from "react-router-dom";
-import Background from "./backgroundImageComponent/Background";
 import NavBar from "./views/navBar/NavBar";
 import Main from "./views/homePage/MainScreen/Main";
 import HematopoiesisType from "./views/Hematopoiesis/HematopoiesisType";
@@ -28,7 +27,7 @@ function App() {
   };
 
   return (
-    <div onClick={(e) => toggleSubmenu(e)} className="App">
+    <div onClick={(e) => toggleSubmenu(e)} className="App backgroungImg">
       <NavBar isOpen={isSubMenuOpen} SubmenuRef={NavBarSubmenuRef} />
       <Routes>
         <Route path="/" element={<HomePage />} />
