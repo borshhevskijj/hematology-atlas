@@ -8,6 +8,7 @@ import NavBar from "./views/navBar/NavBar";
 import Main from "./views/homePage/MainScreen/Main";
 import HematopoiesisType from "./views/Hematopoiesis/HematopoiesisType";
 import HomePage from "./views/homePage/HomePage";
+import PageNotFound from "./components/errors/pageNotFound/PageNotFound";
 
 function App() {
   const [isSubMenuOpen, setOpen] = useState(false);
@@ -27,13 +28,14 @@ function App() {
   };
 
   return (
-    <div onClick={(e) => toggleSubmenu(e)} className="App backgroungImg">
+    <div onClick={(e) => toggleSubmenu(e)} className="App">
       <NavBar isOpen={isSubMenuOpen} SubmenuRef={NavBarSubmenuRef} />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="search/:name" element={<SearchPage />} />
         <Route path="hematopoiesis/:type" element={<HematopoiesisType />} />
-        <Route path="*" element={<div>Такой страницы не существует</div>} />
+        {/* <Route path="*" element={<div>Такой страницы не существует</div>} /> */}
+        <Route path="*" element={<PageNotFound errorMessage={"Такой страницы не существует"} responseStatus={404} />} />
       </Routes>
     </div>
   );

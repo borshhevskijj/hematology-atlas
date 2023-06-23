@@ -27,7 +27,7 @@ export const Input: React.FC = () => {
           type="text"
           value={inputText}
           list="auto_complete"
-          placeholder="Поиск"
+          placeholder="Найти клетку"
           onChange={(e) => setInputText(e.target.value)}
         />
         <img src={searchIcon} alt="searchIcon" />

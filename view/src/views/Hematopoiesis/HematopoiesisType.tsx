@@ -3,12 +3,7 @@ import React, { useState, useEffect } from "react";
 import Accordion from "../accordion/Accordion";
 import { useParams } from "react-router-dom";
 import PageNotFound from "../../components/errors/pageNotFound/PageNotFound";
-
-interface bloodCellImage {
-  id: number;
-  bloodCell_id: number;
-  image: string;
-}
+import { error } from "../search/SearchPage";
 
 export interface IBloodCell {
   id: number;
@@ -25,7 +20,7 @@ const HematopoiesisType = () => {
   const { type } = useParams();
   const [data, setData] = useState<IBloodCell[]>([]);
   const [isLoading, setLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
+  const [error, setError] = useState<error | null>(null);
 
   const getData = async () => {
     try {
@@ -39,18 +34,23 @@ const HematopoiesisType = () => {
         clearTimeout(timerId);
         setLoading(false);
         setError(null);
-        console.log("fetching.ok");
+        console.log(fetching.status, "fetching.status");
       }
       if (!fetching.ok) {
-        console.log("!fetching.ok");
         setData([]);
         setLoading(false);
         clearTimeout(timerId);
-        setError("Произошла ошибка при выполнении запроса");
+        setError({
+          errorMessage: "Произошла ошибка при выполнении запроса",
+          responseStatus: fetching.status,
+        });
       }
     } catch (err) {
       console.log("catch", err);
-      setError("Произошла ошибка при выполнении запроса");
+      setError({
+        errorMessage: "Произошла ошибка при выполнении запроса",
+        responseStatus: 500,
+      });
       setData([]);
       setLoading(false);
     }
@@ -64,7 +64,7 @@ const HematopoiesisType = () => {
     return <div>Loading...</div>;
   }
   if (error) {
-    return <PageNotFound children={<div>{error}</div>} />;
+    return <PageNotFound errorMessage={error.errorMessage} responseStatus={error.responseStatus} />;
   }
   return (
     <section className="container" style={{ paddingBottom: 250, paddingTop: 50 }}>

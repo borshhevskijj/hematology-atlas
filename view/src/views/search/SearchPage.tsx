@@ -7,11 +7,16 @@ import { useParams } from "react-router-dom";
 import cl from "./searchPage.module.css";
 import PageNotFound from "../../components/errors/pageNotFound/PageNotFound";
 
+export type error = {
+  responseStatus: number;
+  errorMessage: string;
+};
+
 const SearchPage = () => {
   const { name } = useParams();
   const [data, setData] = useState<IBloodCell>();
 
-  const [err, setError] = useState<any>(null);
+  const [err, setError] = useState<error | null>(null);
   const [isLoading, setLoading] = useState(false);
 
   const getData = async () => {
@@ -36,10 +41,16 @@ const SearchPage = () => {
         setData(undefined);
         setLoading(false);
         clearTimeout(timerId);
-        setError("Такой клетки не существует!");
+        setError({
+          responseStatus: fetching.status,
+          errorMessage: "Такой клетки не существует!",
+        });
       }
     } catch (err) {
-      setError("Произошла ошибка при выполнении запроса");
+      setError({
+        responseStatus: 500,
+        errorMessage: "Произошла ошибка при выполнении запроса!",
+      });
       setData(undefined);
       setLoading(false);
     }
@@ -54,8 +65,7 @@ const SearchPage = () => {
     return <div>loading...</div>;
   }
   if (err) {
-    // return <div>{err}</div>;
-    return <PageNotFound children={<div>{err}</div>} />;
+    return <PageNotFound errorMessage={err.errorMessage} responseStatus={err.responseStatus} />;
   }
 
   return (
