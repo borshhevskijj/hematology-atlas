@@ -9,53 +9,90 @@ interface Props {
   isOpen: boolean;
 }
 
+const menuLinks = {
+  subMenu: [
+    {
+      name: "Лимфопоэз",
+      path: `hematopoiesis/lymphopoiesis`,
+    },
+    {
+      name: "Гранулопоэз",
+      path: `hematopoiesis/granulopoiesis`,
+    },
+    {
+      name: "Эритропоэз",
+      path: `hematopoiesis/erythropoiesis`,
+    },
+    {
+      name: "Тромбопоэз",
+      path: `hematopoiesis/thrombopoiesis`,
+    },
+    {
+      name: "Монопоэз",
+      path: `hematopoiesis/monopoesis`,
+    },
+    {
+      name: "Аномалии",
+      path: `hematopoiesis/anomalies`,
+    },
+    {
+      name: "Лейкоциты в периферии",
+      path: `hematopoiesis/leukocytesInPeripheralBlood`,
+    },
+  ],
+  mainMenu: [
+    {
+      name: "Главная",
+      path: "/#main",
+    },
+    {
+      name: "О проекте",
+      path: "/#aboutProject",
+    },
+    {
+      name: "Полезная информация",
+      path: "/#aboutBloodCells",
+    },
+  ],
+};
+
 const NavBar: React.FC<Props> = ({ isOpen, SubmenuRef }) => {
   const [isBrgMenuOpen, setBrgMenuState] = useState(false);
 
+  const toggleMenuStates = (e: React.MouseEvent<Element>) => {
+    // e.stopPropagation();
+    setBrgMenuState(!isBrgMenuOpen);
+  };
+
   return (
     <header className="container" id="main">
-      <div onClick={() => setBrgMenuState(!isBrgMenuOpen)} className={`${cl.brgMenu} ${isBrgMenuOpen ? cl.open : ""}`}>
+      <div onClick={(e) => toggleMenuStates(e)} className={`${cl.brgMenu} ${isBrgMenuOpen ? cl.open : ""}`}>
         <span />
       </div>
       <nav className={`${isBrgMenuOpen ? `${cl.menuActive} ${cl.menu}` : cl.menu}`}>
         <ul>
-          <li>
-            <Link to="/#main">Главная</Link>
-          </li>
-          <li>
-            <Link to="/#aboutProject">О проекте</Link>
-          </li>
-          <li>
-            <Link to="/#aboutBloodCells">Полезная информация</Link>
-          </li>
+          {menuLinks.mainMenu.map((link) => {
+            return (
+              <li onClick={(e) => toggleMenuStates(e)} key={link.path}>
+                <Link to={link.path}>{link.name}</Link>
+              </li>
+            );
+          })}
+
           <li className={cl.submenuBtn}>
             <a href="#" ref={SubmenuRef}>
               Кроветворение
               <img className={`${isOpen ? "" : cl.imgOpen}`} src={subMenuIcon} alt="open/close icon" />
             </a>
             {/* ---------------- */}
-            <ul className={`${cl.submenu} ${isOpen ? cl.open : ""}`}>
-              <li>
-                <Link to={`hematopoiesis/lymphopoiesis`}>Лимфопоэз</Link>
-              </li>
-              <li>
-                <Link to={`hematopoiesis/granulopoiesis`}>Гранулопоэз</Link>
-              </li>
-              <li>
-                <Link to={`hematopoiesis/erythropoiesis`}>Эритропоэз</Link>
-              </li>
-              <li>
-                <Link to={`hematopoiesis/thrombopoiesis`}>Тромбопоэз</Link>
-              </li>
-              <li>
-                <Link to={`hematopoiesis/monopoesis`}>Монопоэз</Link>
-              </li>
-              <li>
-                <Link to={`hematopoiesis/anomalies`}>Аномалии</Link>
-              </li>
-              <li>
-                <Link to={`hematopoiesis/leukocytesInPeripheralBlood`}>Лейкоциты в периферии</Link>
-              </li>
+            <ul onClick={(e) => toggleMenuStates(e)} className={`${cl.submenu} ${isOpen ? cl.open : ""}`}>
+              {menuLinks.subMenu.map((link) => {
+                return (
+                  <li key={link.path}>
+                    <Link to={link.path}>{link.name}</Link>
+                  </li>
+                );
+              })}
             </ul>
           </li>
           <Input />

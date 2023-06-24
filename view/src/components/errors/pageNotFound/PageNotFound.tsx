@@ -4,7 +4,6 @@ import img from "../../../assets/aboutBloodCells/descriptionImg1.png";
 import { error } from "../../../views/search/SearchPage";
 
 const PageNotFound: React.FC<error> = ({ errorMessage, responseStatus }) => {
-  console.log(responseStatus.toString().split(""), typeof responseStatus);
   const chars = responseStatus.toString().split("");
   return (
     <div className={cl.wrapper}>

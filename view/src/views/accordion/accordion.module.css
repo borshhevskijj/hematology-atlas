@@ -18,20 +18,12 @@
     align-items: center;
 }
 .accordionHeader h2{
+    font-size: calc(5vw + 2px);
+    padding-right: 2.3vw;
     padding: 0px;
 }
-
-/* .accordion ul{
-    padding-left: 15px;
-    padding-top: 60px;
-    list-style: decimal;
+@media (max-width:450px){
+    .accordion{
+        padding: 25px 0;
+    }
 }
-.accordion ul li{
-    padding-bottom: 10px;
-}
-
-.accordion ul li:last-child  {
-    margin-left:-15px ;
-    padding-top: 40px;
-} */
-

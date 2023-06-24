@@ -129,6 +129,10 @@ nav ul li > *{
   @media (max-width:840px) {
     
     header{
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 9999999999;
       padding-left: 0!important;
       padding-right:0!important ;
     }

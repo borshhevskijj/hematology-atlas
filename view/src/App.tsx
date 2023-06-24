@@ -16,14 +16,19 @@ function App() {
 
   const toggleSubmenu = (e: React.MouseEvent<HTMLParagraphElement, MouseEvent>) => {
     if (!isSubMenuOpen && e.target !== NavBarSubmenuRef.current) {
+      console.log("!isSubMenuOpen && e.target !== NavBarSubmenuRef.current");
       return;
     }
     if (isSubMenuOpen && e.target === NavBarSubmenuRef.current) {
+      console.log("isSubMenuOpen && e.target === NavBarSubmenuRef.current");
       return setOpen(false);
     }
     if (e.target === NavBarSubmenuRef.current) {
+      console.log("e.target === NavBarSubmenuRef.current");
       return setOpen(true);
     }
+    console.log("fase");
+
     setOpen(false);
   };
 

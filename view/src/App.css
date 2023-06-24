@@ -113,6 +113,11 @@ h3{
         line-height: 16.44px;
     }
 }
+@media (max-width:840px) {
+.App{
+    padding-top:100px ;
+}
+}
 @media (max-width:768px) {
     h1,h2{
         line-height: 38.75px;

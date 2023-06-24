@@ -14,7 +14,11 @@ const Carousel = ({imagesArr}) => {
       navigation
       pagination={{type:'progressbar'}}
       spaceBetween={20}
-      slidesPerView={3}
+      slidesPerView={1}
+      breakpoints={{
+      450:{slidesPerView:2} ,
+      800:{slidesPerView:3}
+    }}
       // onSlideChange={() => console.log('slide change')}
       // onSwiper={(swiper) => console.log(swiper)}
       className={cl.carousel}
