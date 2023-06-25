@@ -22,8 +22,25 @@
     padding-right: 2.3vw;
     padding: 0px;
 }
+
+.imgWrapper{
+    min-width: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+
+}
+.wrapper{
+    max-width: 5vw;
+    max-height: 5vw;
+}
+.wrapper img{
+    width: 100%;
+    /* height: auto; */
+}
 @media (max-width:450px){
     .accordion{
         padding: 25px 0;
     }
+   
 }

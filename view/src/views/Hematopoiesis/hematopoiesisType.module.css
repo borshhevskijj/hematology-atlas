@@ -1,0 +1,10 @@
+.content{
+    padding-top: 50px ;
+    padding-bottom: 250px;
+}
+@media (max-width:1110px){
+    .content{
+        padding-top: 0 ;
+        padding-bottom: 200px;
+    }
+}

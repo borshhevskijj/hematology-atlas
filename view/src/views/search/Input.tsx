@@ -4,21 +4,28 @@ import searchIcon from "../../assets/icons/Search.svg";
 import cl from "./input.module.css";
 import { IBloodCell } from "../Hematopoiesis/HematopoiesisType";
 import { useNavigate } from "react-router-dom";
-interface Props {
-  getData: () => Promise<void>;
-  setInputText: React.Dispatch<React.SetStateAction<string>>;
-  inputText: string;
-}
+// interface Props {
+//   getData: () => Promise<void>;
+//   setInputText: React.Dispatch<React.SetStateAction<string>>;
+//   inputText: string;
+// }
+type InputProps = React.InputHTMLAttributes<HTMLInputElement>;
 
-export const Input: React.FC = () => {
+type props = {
+  toggleMenuStates: () => void;
+};
+
+export const Input: React.FC<props> = ({ toggleMenuStates }) => {
   const [inputText, setInputText] = useState(sessionStorage.getItem("CellName") || "");
   const navigate = useNavigate();
 
   const onPressEnterOnInput = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
       navigate(`/search/${inputText}`);
+      toggleMenuStates();
     }
   };
+
   return (
     <div className={cl.inputContainer}>
       <div className={cl.inputWrapper}>

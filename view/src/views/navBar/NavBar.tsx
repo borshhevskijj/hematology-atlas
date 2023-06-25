@@ -59,21 +59,20 @@ const menuLinks = {
 const NavBar: React.FC<Props> = ({ isOpen, SubmenuRef }) => {
   const [isBrgMenuOpen, setBrgMenuState] = useState(false);
 
-  const toggleMenuStates = (e: React.MouseEvent<Element>) => {
-    // e.stopPropagation();
+  const toggleMenuStates = () => {
     setBrgMenuState(!isBrgMenuOpen);
   };
 
   return (
     <header className="container" id="main">
-      <div onClick={(e) => toggleMenuStates(e)} className={`${cl.brgMenu} ${isBrgMenuOpen ? cl.open : ""}`}>
+      <div onClick={() => toggleMenuStates()} className={`${cl.brgMenu} ${isBrgMenuOpen ? cl.open : ""}`}>
         <span />
       </div>
       <nav className={`${isBrgMenuOpen ? `${cl.menuActive} ${cl.menu}` : cl.menu}`}>
         <ul>
           {menuLinks.mainMenu.map((link) => {
             return (
-              <li onClick={(e) => toggleMenuStates(e)} key={link.path}>
+              <li onClick={() => toggleMenuStates()} key={link.path}>
                 <Link to={link.path}>{link.name}</Link>
               </li>
             );
@@ -85,7 +84,7 @@ const NavBar: React.FC<Props> = ({ isOpen, SubmenuRef }) => {
               <img className={`${isOpen ? "" : cl.imgOpen}`} src={subMenuIcon} alt="open/close icon" />
             </a>
             {/* ---------------- */}
-            <ul onClick={(e) => toggleMenuStates(e)} className={`${cl.submenu} ${isOpen ? cl.open : ""}`}>
+            <ul onClick={() => toggleMenuStates()} className={`${cl.submenu} ${isOpen ? cl.open : ""}`}>
               {menuLinks.subMenu.map((link) => {
                 return (
                   <li key={link.path}>
@@ -95,7 +94,8 @@ const NavBar: React.FC<Props> = ({ isOpen, SubmenuRef }) => {
               })}
             </ul>
           </li>
-          <Input />
+
+          <Input toggleMenuStates={toggleMenuStates} />
         </ul>
       </nav>
     </header>

@@ -31,8 +31,10 @@ const Accordion: React.FC<Props> = ({ data }) => {
         <div className={cl.accordion}>
           <div className={cl.accordionHeader} onClick={() => toggleAccordion()}>
             <h2>{data.name}</h2>
-            <div>
-              <img src={isOpen ? minusIcon : plusIcon} alt="" />
+            <div className={cl.imgWrapper}>
+              <div className={cl.wrapper}>
+                <img src={isOpen ? minusIcon : plusIcon} alt="" />
+              </div>
             </div>
           </div>
           <div className={`${cl.accordionContent} ${isOpen ? cl.open : ""}`} ref={contentRef}>

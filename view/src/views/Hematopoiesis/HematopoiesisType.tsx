@@ -4,7 +4,7 @@ import Accordion from "../accordion/Accordion";
 import { useParams } from "react-router-dom";
 import PageNotFound from "../../components/errors/pageNotFound/PageNotFound";
 import { error } from "../search/SearchPage";
-
+import cl from "./hematopoiesisType.module.css";
 export interface IBloodCell {
   id: number;
   name: string;
@@ -34,7 +34,6 @@ const HematopoiesisType = () => {
         clearTimeout(timerId);
         setLoading(false);
         setError(null);
-        console.log(fetching.status, "fetching.status");
       }
       if (!fetching.ok) {
         setData([]);
@@ -46,7 +45,6 @@ const HematopoiesisType = () => {
         });
       }
     } catch (err) {
-      console.log("catch", err);
       setError({
         errorMessage: "Произошла ошибка при выполнении запроса",
         responseStatus: 500,
@@ -67,7 +65,7 @@ const HematopoiesisType = () => {
     return <PageNotFound errorMessage={error.errorMessage} responseStatus={error.responseStatus} />;
   }
   return (
-    <section className="container" style={{ paddingBottom: 250, paddingTop: 50 }}>
+    <section className={`container ${cl.content}`}>
       {data.length > 0 &&
         data.map((item: any) => {
           return <Accordion key={item.id} data={item} />;
