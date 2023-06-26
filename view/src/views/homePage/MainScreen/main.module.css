@@ -48,7 +48,7 @@
 
 @media (max-width:768px) {
     .main{
-        padding-bottom: 120px;
+        padding-bottom: 220px;
     }
     .main h1 :first-child{
         padding-bottom: calc(3vw - 6px);
@@ -71,6 +71,12 @@
     height: 160px;
    }
 }
+@media (max-width:700px) {
+    .main{
+        padding-bottom: 120px;
+    }
+}
+
 @media (max-width:535px) {
 .contentWrapper{
     width: 57%;

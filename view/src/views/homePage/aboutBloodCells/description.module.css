@@ -50,6 +50,7 @@
 @media (max-width:900px) {
     .contentWrapper{
         padding-bottom: 30px;
+        gap: 15px;
     }
     .contentWrapper p{
         gap: 24px;
@@ -88,15 +89,22 @@
     }
     .dates{
         top: 40px;
+        gap: 0;
+    }
+    .dates p{
+        margin-bottom: 25px;
     }
 }
 
 @media (max-width:768px) {
-    .content {
+    .content {        
         flex-direction: column;
+        /* gap: 40px; */
+
     }
     .content h3{
         position: absolute;
+        top: -33px;
     }
     .content article{
         width: 100%;
@@ -113,6 +121,8 @@
         width: calc(26% + 13vw);
         top: 35%;
         height: 16%;
+        height: 25%;
+
     }
     .lastBlock img {
         width: 100%;
@@ -129,9 +139,10 @@
     .lastBlock{
         order:2;
     }
-
     .dates{
         width: 36%;
+        width: 44%;
+
     }
 }
 @media (max-width:500px) {
@@ -144,7 +155,7 @@
         width: 160px;
         height: auto;
         top: 35%;
-        left: 54%;
+        left: calc(100% - 160px);
     }
     .lastBlock img {
         aspect-ratio: 0.4 / 0.65;

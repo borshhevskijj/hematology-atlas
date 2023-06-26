@@ -52,6 +52,7 @@ article{
     .content article {
         width: calc(100%/2);
         padding-left:0 ;
+        padding-right:0 ;
     }
     .content .lastBlock {
         top: calc(-10vw + -50px);

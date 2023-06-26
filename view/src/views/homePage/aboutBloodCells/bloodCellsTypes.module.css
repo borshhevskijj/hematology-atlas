@@ -29,7 +29,7 @@
         padding-bottom: 300px;
     }
     .content article{
-        width: calc(calc(100%/2) - 13px);
+        width: calc(calc(100%/2) - 30px);
     }
     .content h3{
         width: 100%;
@@ -41,4 +41,10 @@
     .content article{
         width: 100%;
     }
+}
+@media (max-width:568px) {
+    .content h4{
+        margin-bottom: 15px;
+    }
+
 }
