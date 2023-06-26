@@ -21,6 +21,11 @@
         width: 100%;
     }
 }
+@media (max-width:840px) {
+    .aboutBloodCells h2{
+        padding-bottom: 150px;
+    }
+}
 @media (max-width:450px) {
     .bgImg{
         width: 100%;

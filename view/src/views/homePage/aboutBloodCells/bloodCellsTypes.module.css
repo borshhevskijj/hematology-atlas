@@ -3,17 +3,17 @@
     flex-wrap: wrap;
     justify-content: center;
     position: relative;
-    gap: 13px;
+    gap: 30px;
     padding-bottom: 260px;
 }
 .content h3{
-    width: calc(calc(100%/3) - 13px);
+    width: calc(calc(100%/3) - 30px);
 }
 .content h4{
     margin-bottom: 20px;
 }
 .content article{
-    width: calc(calc(100%/3) - 13px);
+    width: calc(calc(100%/3) - 30px);
 }
 .content p {
     padding-bottom: 15px;

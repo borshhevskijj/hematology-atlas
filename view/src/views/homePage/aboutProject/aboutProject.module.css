@@ -1,5 +1,5 @@
 .aboutProject{
-    padding-bottom: 180px;
+    padding-bottom: 300px;
 }
 .content{
     display: flex;
@@ -24,13 +24,18 @@
 
 @media (max-width: 900px) {
     .contentWrapper{
-    width: 45%;
+        width: 45%;
     }
     .contentWrapper img{
-    max-width: 255px;
+        max-width: 255px;
     }
     .imgWrapper{
-    width: 55%;
+        width: 55%;
+    }
+}
+@media (max-width: 840px) {
+    .aboutProject{
+        padding-bottom: 150px;
     }
 }
 @media (max-width:768px) {

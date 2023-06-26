@@ -50,7 +50,6 @@
 @media (max-width:900px) {
     .contentWrapper{
         padding-bottom: 30px;
-        gap: 33px   ;
     }
     .contentWrapper p{
         gap: 24px;
@@ -80,6 +79,15 @@
         right: -200px;
         width: 182px;
         height: 182px;
+    }
+}
+
+@media (max-width:840px) {
+    .content h3{
+        top: -10px;
+    }
+    .dates{
+        top: 40px;
     }
 }
 
