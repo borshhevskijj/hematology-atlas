@@ -15,10 +15,6 @@ nav ul {
 nav ul li > *{
   padding: 7px;
 }
-/* ------------ */
-
-
-
 .brgMenu{
   display: none;
     width: 38px;
@@ -170,7 +166,8 @@ nav ul li > *{
       gap: 70px;
     }
     nav ul li:not(.submenu li){
-      font-size: calc(6.8vw + 9px);
+      font-size: calc(5vw + 9px);
+      /* font-size: 50px; */
     }
 
     .submenu{

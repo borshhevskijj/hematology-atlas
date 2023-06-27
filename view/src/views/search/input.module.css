@@ -20,7 +20,7 @@
     outline: none;
   }
 
-.inputWrapper{
+.inputWrapper,.emptyInput{
     position: relative;
     width:100%;
     height: 100%;
@@ -36,12 +36,32 @@
     order: -1;
     left: 16px;
     top: 16px;
+    cursor: pointer;
 }
+.emptyInput input{
+    border: 1.5px solid red!important;
+}
+.emptyInput img {
+    visibility: hidden!important;
+}
+.emptyInput input {
+        animation: shake .3s;
+    }
+
+    @keyframes shake {
+        0% { transform: translate(1px, 1px) rotate(0deg); }
+        20% { transform: translate(-1px, -2px) rotate(-1deg); }
+        40% { transform: translate(-3px, 0px) rotate(1deg); }
+        60% { transform: translate(1px, 2px) rotate(0deg); }
+        80% { transform: translate(0px, -1px); }
+        100% { transform: translate(1px, -2px) rotate(-1deg); }
+      }
+
 
 @media (max-width: 840px) {
     .inputContainer{
         width: 55%;
-        height: 65px;
+        height: 50px;
         min-width: 335px;
 
     }
@@ -49,18 +69,17 @@
         font-size: 18px;
     }
     .inputWrapper img{
-        top: 26px;
+        top: 35%;
     }
 }
 @media (max-width:500px) {
-    .inputContainer{
-        /* width: 55%; */
-        height: 51px;
+    .inputContainer input{
+        font-size: 16px;
     }
-    /* .inputContainer input{
-        font-size: 18px;
-    } */
+    .inputContainer{
+        height: 40px;
+    }
     .inputWrapper img{
-        top: 19px;
+        top: 30%;
     }
 }

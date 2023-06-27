@@ -3,8 +3,8 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    /* margin-top: 15%; */
-    top: 25%;
+    gap: 40px;
+    top: 10%;
     left: 0;
     width: 100vw;
     height: 100%;

@@ -18,6 +18,11 @@
         padding-top: 45px;
     }
 }
+@media (max-width: 1100px){
+    .cellDescription {
+        padding-top: 45px;
+    }
+}
 
 @media (max-width:550px){
     .cellDescription{

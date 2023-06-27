@@ -84,7 +84,7 @@
 .bigImageWrapper{
     width: 224px;
     min-width: auto;
-    left: 43%;
+    left: 50%; 
 }
 .smallImageWrapper{
     width: 150px;

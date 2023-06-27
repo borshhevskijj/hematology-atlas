@@ -2,8 +2,11 @@ import React from "react";
 import cl from "./pageNotFound.module.css";
 import img from "../../../assets/aboutBloodCells/descriptionImg1.png";
 import { error } from "../../../views/search/SearchPage";
+import { useNavigate } from "react-router-dom";
+import Button from "../../button/Button";
 
 const PageNotFound: React.FC<error> = ({ errorMessage, responseStatus }) => {
+  const navigate = useNavigate();
   const chars = responseStatus.toString().split("");
   return (
     <div className={cl.wrapper}>
@@ -18,6 +21,7 @@ const PageNotFound: React.FC<error> = ({ errorMessage, responseStatus }) => {
         <span>{errorMessage}</span>
         <span> ошибка: {responseStatus}</span>
       </div>
+      <Button children={"на главную"} onClick={() => navigate("/")} />
     </div>
   );
 };

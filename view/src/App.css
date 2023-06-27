@@ -32,11 +32,13 @@ body{
 }
 .container {
     width: 100%;
+    position: relative;
+    z-index: 3;
     max-width: 1700px;
-    box-sizing: inherit;
-    display: block;
     padding-left: 120px;
     padding-right:120px;
+    display: block;
+    box-sizing: inherit;
 }
 .bRadius img{
     border-radius: 30px!important;
