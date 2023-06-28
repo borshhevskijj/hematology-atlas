@@ -32,8 +32,8 @@ body{
 }
 .container {
     width: 100%;
-    position: relative;
-    z-index: 3;
+    /* position: relative;
+    z-index: 3; */
     max-width: 1700px;
     padding-left: 120px;
     padding-right:120px;

@@ -45,6 +45,10 @@ export const Input: React.FC<props> = ({ toggleMenuStates }) => {
   };
 
   const search = () => {
+    setError({
+      errorMessage: undefined,
+      errorClassName: undefined,
+    });
     if (inputValidation(inputText)) {
       navigate(`/search/${inputText}`);
       toggleMenuStates();
@@ -58,19 +62,21 @@ export const Input: React.FC<props> = ({ toggleMenuStates }) => {
     return;
   };
   return (
-    <div className={cl.inputContainer}>
+    <div className={error.errorClassName ? `${error.errorClassName} ${cl.inputContainer}` : cl.inputContainer}>
       {/* <div className={cl.inputWrapper}> */}
-      <div className={error.errorClassName ? error.errorClassName : cl.inputWrapper}>
+      <div className={cl.inputWrapper}>
         <input
           onKeyDown={(e) => onPressEnterOnInput(e)}
           type="text"
           value={inputText}
           list="auto_complete"
-          placeholder={error.errorMessage ? error.errorMessage : "Найти клетку"}
+          placeholder="Найти клетку"
           onChange={(e) => setInputText(e.target.value)}
         />
         <img onClick={() => search()} src={searchIcon} alt="searchIcon" />
       </div>
+      {error.errorMessage && <span className={cl.error}>{error.errorMessage}</span>}
+      {/* <button onClick={() => navigate(`/search/${inputText}`)}>Поиск</button> */}
       <AutoComplete />
     </div>
   );

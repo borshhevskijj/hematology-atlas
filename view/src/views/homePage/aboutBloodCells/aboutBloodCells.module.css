@@ -5,6 +5,7 @@
 .aboutBloodCells{
     position: relative;
     overflow: hidden;
+    padding-top: 30px;
 }
 .bgImg{
     position: absolute;
