@@ -6,6 +6,7 @@ import DisplayCells from "../../components/DisplayCells";
 import { useParams } from "react-router-dom";
 import cl from "./searchPage.module.css";
 import PageNotFound from "../../components/errors/pageNotFound/PageNotFound";
+import Spinner from "../../components/spinner/Spinner";
 
 export type error = {
   responseStatus: number;
@@ -62,7 +63,7 @@ const SearchPage = () => {
   }, [name]);
 
   if (isLoading) {
-    return <div>loading...</div>;
+    return <Spinner />;
   }
   if (err) {
     return <PageNotFound errorMessage={err.errorMessage} responseStatus={err.responseStatus} />;

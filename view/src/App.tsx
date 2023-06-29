@@ -1,14 +1,26 @@
-import React, { useState, useEffect, useRef } from "react";
-import SearchPage from "./views/search/SearchPage";
-import Accordion from "./views/accordion/Accordion";
-import { Link, Routes, Route } from "react-router-dom";
+import React, { useState, lazy, Suspense, useRef } from "react";
+import { Routes, Route } from "react-router-dom";
 import "./App.css";
-import { useLocation, useMatch, matchRoutes } from "react-router-dom";
 import NavBar from "./views/navBar/NavBar";
-import Main from "./views/homePage/MainScreen/Main";
-import HematopoiesisType from "./views/Hematopoiesis/HematopoiesisType";
-import HomePage from "./views/homePage/HomePage";
-import PageNotFound from "./components/errors/pageNotFound/PageNotFound";
+
+// import HomePage from "./views/homePage/HomePage";
+// import HematopoiesisType from "./views/Hematopoiesis/HematopoiesisType";
+// import SearchPage from "./views/search/SearchPage";
+// import PageNotFound from "./components/errors/pageNotFound/PageNotFound";
+import Spinner from "./components/spinner/Spinner";
+
+const HomePage = lazy(() => import("./views/homePage/HomePage"));
+const SearchPage = lazy(() => import("./views/search/SearchPage"));
+const HematopoiesisType = lazy(() => import("./views/Hematopoiesis/HematopoiesisType"));
+const PageNotFound = lazy(() => import("./components/errors/pageNotFound/PageNotFound"));
+
+const appRoutes = [
+  { path: "/", component: <HomePage /> },
+  { path: "spinner", component: <Spinner /> },
+  { path: "search/:name", component: <SearchPage /> },
+  { path: "hematopoiesis/:type", component: <HematopoiesisType /> },
+  { path: "*", component: <PageNotFound errorMessage={"Такой страницы не существует"} responseStatus={404} /> },
+];
 
 function App() {
   const [isSubMenuOpen, setOpen] = useState(false);
@@ -31,11 +43,9 @@ function App() {
     <div onClick={(e) => toggleSubmenu(e)} className="App">
       <NavBar isOpen={isSubMenuOpen} SubmenuRef={NavBarSubmenuRef} />
       <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="search/:name" element={<SearchPage />} />
-        <Route path="hematopoiesis/:type" element={<HematopoiesisType />} />
-        {/* <Route path="*" element={<div>Такой страницы не существует</div>} /> */}
-        <Route path="*" element={<PageNotFound errorMessage={"Такой страницы не существует"} responseStatus={404} />} />
+        {appRoutes.map(({ path, component }) => {
+          return <Route path={path} element={<Suspense fallback={<Spinner />}>{component}</Suspense>} />;
+        })}
       </Routes>
     </div>
   );

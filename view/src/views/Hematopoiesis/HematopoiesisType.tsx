@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import PageNotFound from "../../components/errors/pageNotFound/PageNotFound";
 import { error } from "../search/SearchPage";
 import cl from "./hematopoiesisType.module.css";
+import Spinner from "../../components/spinner/Spinner";
 export interface IBloodCell {
   id: number;
   name: string;
@@ -59,7 +60,7 @@ const HematopoiesisType = () => {
   }, [type]);
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <Spinner />;
   }
   if (error) {
     return <PageNotFound errorMessage={error.errorMessage} responseStatus={error.responseStatus} />;

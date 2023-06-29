@@ -70,10 +70,10 @@ const NavBar: React.FC<Props> = ({ isOpen, SubmenuRef }) => {
       </div>
       <nav className={`${isBrgMenuOpen ? `${cl.menuActive} ${cl.menu}` : cl.menu}`}>
         <ul>
-          {menuLinks.mainMenu.map((link) => {
+          {menuLinks.mainMenu.map(({ path, name }) => {
             return (
-              <li onClick={() => toggleMenuStates()} key={link.path}>
-                <Link to={link.path}>{link.name}</Link>
+              <li onClick={() => toggleMenuStates()} key={path}>
+                <Link to={path}>{name}</Link>
               </li>
             );
           })}
@@ -85,10 +85,10 @@ const NavBar: React.FC<Props> = ({ isOpen, SubmenuRef }) => {
             </a>
             {/* ---------------- */}
             <ul onClick={() => toggleMenuStates()} className={`${cl.submenu} ${isOpen ? cl.open : ""}`}>
-              {menuLinks.subMenu.map((link) => {
+              {menuLinks.subMenu.map(({ path, name }) => {
                 return (
-                  <li key={link.path}>
-                    <Link to={link.path}>{link.name}</Link>
+                  <li key={path}>
+                    <Link to={path}>{name}</Link>
                   </li>
                 );
               })}

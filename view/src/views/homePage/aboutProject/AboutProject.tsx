@@ -15,12 +15,12 @@ const AboutProject = () => {
             идентифицировать.
           </p>
           <div>
-            <img src={img} alt="123" />
+            <img loading="lazy" src={img} alt="123" />
           </div>
         </div>
 
         <div className={`${cl.imgWrapper} bRadius`}>
-          <img src={img2} alt="123" />
+          <img loading="lazy" src={img2} alt="123" />
         </div>
       </div>
     </section>

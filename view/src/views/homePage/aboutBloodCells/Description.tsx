@@ -31,7 +31,7 @@ const Description = () => {
           </p>
         </div>
         <div className={`${cl.imgWrapper} ${cl.imgWrapperToLeft}`}>
-          <img src={img1} alt="qwe" />
+          <img loading="lazy" src={img1} alt="qwe" />
         </div>
       </article>
       <article className={cl.lastBlock}>
@@ -47,7 +47,7 @@ const Description = () => {
           </p>
         </div>
         <div className={`${cl.imgWrapper} bRadius`}>
-          <img src={img2} alt="qwerty" />
+          <img loading="lazy" src={img2} alt="qwerty" />
         </div>
       </article>
     </div>
