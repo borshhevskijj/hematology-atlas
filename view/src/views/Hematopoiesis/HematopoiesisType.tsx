@@ -6,6 +6,7 @@ import PageNotFound from "../../components/errors/pageNotFound/PageNotFound";
 import { error } from "../search/SearchPage";
 import cl from "./hematopoiesisType.module.css";
 import Spinner from "../../components/spinner/Spinner";
+import BackgroundLines from "../../components/backgroundLines/BackgroundLines";
 export interface IBloodCell {
   id: number;
   name: string;
@@ -67,6 +68,7 @@ const HematopoiesisType = () => {
   }
   return (
     <section className={`container ${cl.content}`}>
+      {/* <BackgroundLines /> */}
       {data.length > 0 &&
         data.map((item: any) => {
           return <Accordion key={item.id} data={item} />;

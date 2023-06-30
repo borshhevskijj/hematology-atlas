@@ -36,7 +36,7 @@ function App() {
   };
 
   return (
-    <div onClick={(e) => toggleSubmenu(e)} className="App">
+    <div onClick={(e) => toggleSubmenu(e)} className="App backgroungImg">
       <NavBar isOpen={isSubMenuOpen} SubmenuRef={NavBarSubmenuRef} />
       <Routes>
         {appRoutes.map(({ path, component }) => {

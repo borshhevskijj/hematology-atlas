@@ -73,7 +73,10 @@ body{
 }
 .backgroungImg{
     background-image: url('./assets/background/3DMorphLines.svg');
-    background-repeat: repeat;
+    position: absolute;
+    left: 0;
+    top: 0;
+
 }
 /* ----------------- */
 
