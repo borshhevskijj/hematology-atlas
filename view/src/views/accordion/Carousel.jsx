@@ -25,7 +25,7 @@ const Carousel = ({imagesArr}) => {
     >
      {imagesArr&& Object.keys(imagesArr) && imagesArr.map(image =>{
         return(
-          <SwiperSlide key={image}><img loading='lazy' src={image} alt="blood cell" /></SwiperSlide>
+          <SwiperSlide key={image}><img loading='lazy' src={image} alt="blood cell"/></SwiperSlide>
         )
       })}
     </Swiper>

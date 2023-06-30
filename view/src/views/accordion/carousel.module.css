@@ -2,4 +2,21 @@
     width: 100%;
     min-width: 100%;
     aspect-ratio: 1 / 1;
+
+    background-image: linear-gradient(
+        90deg,
+        #ddd 0px,
+        rgb(255, 255, 255) 100px,
+        #ddd 200px
+      );  animation: shine 2s infinite linear;
+  background-size: 350%;
+}
+
+@keyframes shine {
+  0% {
+    background-position: 150%;
+  }
+  100% {
+    background-position: 10%;
+  }
 }
