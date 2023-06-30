@@ -2,11 +2,8 @@ import React, { useState, lazy, Suspense, useRef } from "react";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import NavBar from "./views/navBar/NavBar";
-
 // import HomePage from "./views/homePage/HomePage";
-// import HematopoiesisType from "./views/Hematopoiesis/HematopoiesisType";
-// import SearchPage from "./views/search/SearchPage";
-// import PageNotFound from "./components/errors/pageNotFound/PageNotFound";
+
 import Spinner from "./components/spinner/Spinner";
 
 const HomePage = lazy(() => import("./views/homePage/HomePage"));
@@ -16,14 +13,13 @@ const PageNotFound = lazy(() => import("./components/errors/pageNotFound/PageNot
 
 const appRoutes = [
   { path: "/", component: <HomePage /> },
-  { path: "spinner", component: <Spinner /> },
   { path: "search/:name", component: <SearchPage /> },
   { path: "hematopoiesis/:type", component: <HematopoiesisType /> },
   { path: "*", component: <PageNotFound errorMessage={"Такой страницы не существует"} responseStatus={404} /> },
 ];
 
 function App() {
-  const [isSubMenuOpen, setOpen] = useState(false);
+  const [isSubMenuOpen, setSubMenuState] = useState(false);
   const NavBarSubmenuRef = useRef(null);
 
   const toggleSubmenu = (e: React.MouseEvent<HTMLParagraphElement, MouseEvent>) => {
@@ -31,12 +27,12 @@ function App() {
       return;
     }
     if (isSubMenuOpen && e.target === NavBarSubmenuRef.current) {
-      return setOpen(false);
+      return setSubMenuState(false);
     }
     if (e.target === NavBarSubmenuRef.current) {
-      return setOpen(true);
+      return setSubMenuState(true);
     }
-    setOpen(false);
+    setSubMenuState(false);
   };
 
   return (
@@ -44,7 +40,7 @@ function App() {
       <NavBar isOpen={isSubMenuOpen} SubmenuRef={NavBarSubmenuRef} />
       <Routes>
         {appRoutes.map(({ path, component }) => {
-          return <Route path={path} element={<Suspense fallback={<Spinner />}>{component}</Suspense>} />;
+          return <Route key={path} path={path} element={<Suspense fallback={<Spinner />}>{component}</Suspense>} />;
         })}
       </Routes>
     </div>

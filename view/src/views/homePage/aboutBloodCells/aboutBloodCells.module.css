@@ -9,8 +9,8 @@
 }
 .bgImg{
     position: absolute;
-    bottom: -270px;
-    left: -120px;
+    bottom: -350px;
+    left: -190px;
 }
 @media (max-width:900px) {
     .bgImg{

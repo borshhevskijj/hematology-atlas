@@ -7,15 +7,15 @@ import Button from "../../button/Button";
 
 const PageNotFound: React.FC<error> = ({ errorMessage, responseStatus }) => {
   const navigate = useNavigate();
-  const chars = responseStatus.toString().split("");
+  const responseStatusChars = responseStatus.toString().split("");
   return (
     <div className={cl.wrapper}>
       <div className={cl.content}>
-        <span className={cl.left}>{chars[0]}</span>
+        <span className={cl.left}>{responseStatusChars[0]}</span>
         <span>
           <img src={img} alt="error" />
         </span>
-        <span className={cl.right}>{chars[2]}</span>
+        <span className={cl.right}>{responseStatusChars[2]}</span>
       </div>
       <div className={cl.children}>
         <span>{errorMessage}</span>

@@ -16,7 +16,7 @@ const AboutBloodCells = () => {
       <Formation />
       <BloodCellsTypes />
       <div className={cl.bgImg}>
-        <img loading="lazy" src={img} alt="" />
+        <img src={img} alt="" />
       </div>
     </section>
   );
