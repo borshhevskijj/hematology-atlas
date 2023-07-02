@@ -67,19 +67,9 @@ body{
       margin: auto;
     }
   }
-/* ----------------- */
 .App{
     min-height: 100vh;
 }
-.backgroungImg{
-    background-image: url('./assets/background/3DMorphLines.svg');
-    position: absolute;
-    left: 0;
-    top: 0;
-
-}
-/* ----------------- */
-
 p,li{
     line-height: 130%;
 }

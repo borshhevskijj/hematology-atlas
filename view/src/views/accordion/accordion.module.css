@@ -4,7 +4,8 @@
     padding: 45px 0;
 }
 .accordionContent{
-    transition: all .3s ease;
+    /* transition: all .3s cubic-bezier(1, 0, 0, 1); */
+    transition: max-height .3s ease-out;
     max-height: 0;
     overflow: hidden;
 }

@@ -3,6 +3,7 @@ import cl from "./navBar.module.css";
 import { HashLink as Link } from "react-router-hash-link";
 import subMenuIcon from "../../assets/icons/subMenuIcon.svg";
 import { Input } from "../search/Input";
+import BackgroundLines from "../../components/backgroundLines/BackgroundLines";
 
 interface Props {
   SubmenuRef: React.MutableRefObject<null | HTMLAnchorElement>;

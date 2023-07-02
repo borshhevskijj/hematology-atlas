@@ -5,6 +5,7 @@ import NavBar from "./views/navBar/NavBar";
 // import HomePage from "./views/homePage/HomePage";
 
 import Spinner from "./components/spinner/Spinner";
+import BackgroundLines from "./components/backgroundLines/BackgroundLines";
 
 const HomePage = lazy(() => import("./views/homePage/HomePage"));
 const SearchPage = lazy(() => import("./views/search/SearchPage"));
@@ -36,7 +37,8 @@ function App() {
   };
 
   return (
-    <div onClick={(e) => toggleSubmenu(e)} className="App backgroungImg">
+    <div onClick={(e) => toggleSubmenu(e)} className="App">
+      <BackgroundLines />
       <NavBar isOpen={isSubMenuOpen} SubmenuRef={NavBarSubmenuRef} />
       <Routes>
         {appRoutes.map(({ path, component }) => {
