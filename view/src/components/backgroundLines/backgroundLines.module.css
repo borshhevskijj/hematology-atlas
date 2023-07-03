@@ -8,13 +8,25 @@
     width: 100%;
 }
 .container img{
+    width: 100vw;
+    height: 230%;
     height: 100%;
 }
 
+
+
+@media (max-width:840px) {
+        .container img{    
+            object-fit: cover;
+            object-view-box: inset(0% 0% 30% 50%);
+        }
+}
+
+
+
 @media (min-width:1443px) {
     .container img{
-        width: 100cqw;
-        height: auto;
+        width: 100vw;
+        /* height: auto; */
     }
-    
 }

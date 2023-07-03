@@ -156,7 +156,7 @@ nav ul li > *{
     }
     .menuActive {
       position: fixed;
-      overflow: scroll;
+      /* overflow: scroll; */
       background: #171717;
       opacity: 1;
       transition: .3s all ease-in;
