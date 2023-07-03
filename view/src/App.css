@@ -5,12 +5,17 @@
     width: 10px;
 }
 ::-webkit-scrollbar-track {
-      background-color: transparent;
+    background-color: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: #3a3e3e;
+    border-radius: 4px;
+}
+@media (max-width:500px) {
+    ::-webkit-scrollbar {
+        width: 2.5px;
     }
-    ::-webkit-scrollbar-thumb {
-        background: #3a3e3e;
-        border-radius: 4px;
-  }
+}
 
 
 *{

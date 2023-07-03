@@ -6,7 +6,7 @@ interface ICellName {
 export const AutoComplete: React.FC = () => {
   const BCnames: ICellName[] | null = JSON.parse(localStorage.getItem("BCnames")!);
   const [names, setNames] = useState<ICellName[]>(BCnames || []);
-  const [isNameLoaded, setIsNameLoaded] = useState(!!localStorage.getItem("BCnames"));
+  const [isNamesLoaded, setIsNamesLoaded] = useState(!!localStorage.getItem("BCnames"));
 
   const getAllCellsNames = async () => {
     const fetching = await fetch(`http://localhost:5000/allCells`);
@@ -16,9 +16,9 @@ export const AutoComplete: React.FC = () => {
   };
 
   useEffect(() => {
-    if (!isNameLoaded) {
+    if (!isNamesLoaded) {
       getAllCellsNames();
-      setIsNameLoaded(true);
+      setIsNamesLoaded(true);
     }
   }, []);
   return (

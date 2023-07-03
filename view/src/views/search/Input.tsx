@@ -20,12 +20,12 @@ type errors = {
 };
 
 export const Input: React.FC<props> = ({ toggleMenuStates }) => {
+  const navigate = useNavigate();
   const [inputText, setInputText] = useState(sessionStorage.getItem("CellName") || "");
   const [error, setError] = useState<errors>({
     errorMessage: undefined,
     errorClassName: undefined,
   });
-  const navigate = useNavigate();
 
   const inputValidation = (text: string) => {
     if (text.trim() === "") {
@@ -63,7 +63,6 @@ export const Input: React.FC<props> = ({ toggleMenuStates }) => {
   };
   return (
     <div className={error.errorClassName ? `${error.errorClassName} ${cl.inputContainer}` : cl.inputContainer}>
-      {/* <div className={cl.inputWrapper}> */}
       <div className={cl.inputWrapper}>
         <input
           onKeyDown={(e) => onPressEnterOnInput(e)}
@@ -76,7 +75,6 @@ export const Input: React.FC<props> = ({ toggleMenuStates }) => {
         <img onClick={() => search()} src={searchIcon} alt="searchIcon" />
       </div>
       {error.errorMessage && <span className={cl.error}>{error.errorMessage}</span>}
-      {/* <button onClick={() => navigate(`/search/${inputText}`)}>Поиск</button> */}
       <AutoComplete />
     </div>
   );

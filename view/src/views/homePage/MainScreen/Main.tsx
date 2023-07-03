@@ -9,7 +9,6 @@ const Main = () => {
         <span>гематологический</span>
         <span>атлас</span>
       </h1>
-
       <div className={cl.content}>
         <div className={cl.contentWrapper}>
           <p>
