@@ -14,6 +14,7 @@ const PageNotFound = lazy(() => import("./components/errors/pageNotFound/PageNot
 
 const appRoutes = [
   { path: "/", component: <HomePage /> },
+  { path: "spinner", component: <Spinner /> },
   { path: "search/:name", component: <SearchPage /> },
   { path: "hematopoiesis/:type", component: <HematopoiesisType /> },
   { path: "*", component: <PageNotFound errorMessage={"Такой страницы не существует"} responseStatus={404} /> },

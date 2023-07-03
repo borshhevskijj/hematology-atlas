@@ -1,7 +1,7 @@
 import { Input } from "../../search/Input";
 import cl from "./main.module.css";
-import img from "../../../assets/mainScreen/mainScreenHQ.webp";
-import img2 from "../../../assets/mainScreen/mainScreenImg2.png";
+import img from "../../../assets/mainScreen/mainScreen.webp";
+import img2 from "../../../assets/mainScreen/mainscreenimg2.webp";
 const Main = () => {
   return (
     <section className={`${cl.main} container`}>

@@ -1,6 +1,18 @@
 @import url('../node_modules/reset-css/reset.css');
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Raleway&display=swap');
 
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+      background-color: transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: #3a3e3e;
+        border-radius: 4px;
+  }
+
+
 *{
     text-decoration: none;
     color: rgba(255, 255, 255, 1);
@@ -128,4 +140,6 @@ h3{
         line-height: 16px;
     }
 }
-/* >768px */
+
+
+

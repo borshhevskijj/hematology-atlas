@@ -1,11 +1,16 @@
 .loader {
     display: block;
     border: 6px solid #f3f3f3;
-    border-top: 6px solid #3498db;
+    border-top: 6px solid #3a3e3e;
+    box-shadow: #3a3e3e 12px;
     border-radius: 50%;
     width: 55px;
     height: 55px;
     animation: spin 1s linear infinite;
+
+    -webkit-box-shadow: 0px 0px 27px 11px rgba(49, 70, 87, 0.5);
+-moz-box-shadow:0px 0px 27px 11px rgba(49, 70, 87, 0.5);
+box-shadow: 0px 0px 27px 11px rgba(49, 70, 87, 0.5);
 
     position: absolute;
     top: 50%;
