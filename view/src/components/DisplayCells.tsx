@@ -11,7 +11,7 @@ const DisplayCells: React.FC<Props> = ({ data }) => {
         <li>Количество: {data.quantity}</li>
         <li>Болезни: {data.diseases}</li>
         <li>
-          <Carousel imagesArr={data.img} />
+          <Carousel imagesArr={data.img} cellName={data.name} />
         </li>
       </ul>
     </>
