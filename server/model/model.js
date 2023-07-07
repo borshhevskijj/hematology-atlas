@@ -1,6 +1,7 @@
 import sqlite from "sqlite3";
 const sqlite3 = sqlite.verbose();
-const db = new sqlite3.Database("D:/bloodCellsBD.db");
+// const db = new sqlite3.Database("D:/bloodCellsBD.db");
+const db = new sqlite3.Database("../database/bloodCellsBD.db");
 
 export default class BloodCellModel {
   getBloodCellDescriptionByName(name, callback) {

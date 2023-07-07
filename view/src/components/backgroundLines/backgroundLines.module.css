@@ -19,12 +19,3 @@
             object-view-box: inset(0% 0% 30% 50%);
         }
 }
-
-
-
-@media (min-width:1443px) {
-    .container img{
-        /* width: 100vw; */
-        /* height: auto; */
-    }
-}
