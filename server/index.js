@@ -1,7 +1,6 @@
 import express from "express";
 import cors from "cors";
 import {
-  // getBloodCellsByNameHandler,
   getBloodCellsByHematopoiesisHandler,
   getBloodCellsByNameHandler,
   getAllBloodCellsNamesHandler,
@@ -23,4 +22,4 @@ app.get("/allCells", (request, response) => {
   getAllBloodCellsNamesHandler(request, response);
 });
 
-app.listen(PORT, () => console.log("SERVER STARTED ON 5000 PORT"));
+app.listen(PORT, () => console.log(`SERVER STARTED ON ${PORT} PORT`));

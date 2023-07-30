@@ -1,7 +1,8 @@
 import sqlite from "sqlite3";
 const sqlite3 = sqlite.verbose();
-// const db = new sqlite3.Database("D:/bloodCellsBD.db");
+// const db = new sqlite3.Database("./bloodCellsBD.db");
 const db = new sqlite3.Database("../database/bloodCellsBD.db");
+// const db = new sqlite3.Database("./database/bloodCellsDB.db");
 
 export default class BloodCellModel {
   getBloodCellDescriptionByName(name, callback) {
@@ -9,7 +10,7 @@ export default class BloodCellModel {
     db.all(query, [name], callback);
   }
   getBloodCellsDescriptionByHemopoiesis(name, callback) {
-    const query = `SELECT bc.*
+    const query = `SELECT bc.* 
           FROM BloodCells bc
           JOIN Hematopoiesis_BloodCells hbc ON bc.id = hbc.bloodCell_id
           JOIN Hematopoesis h ON h.id = hbc.hematopoiesis_id
@@ -39,4 +40,3 @@ export default class BloodCellModel {
     db.all(query, callback);
   }
 }
-//модель
