@@ -1,5 +1,6 @@
 {
   "name": "view",
+  "homepage": "https://borshhevskijj.github.io/hematologyAtlas",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -23,6 +24,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "deploy": "gh-pages -d build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -47,6 +49,7 @@
   "proxy": "http://localhost:5000",
   "devDependencies": {
     "@types/react-css-modules": "^4.6.4",
-    "@types/react-router-hash-link": "^2.4.6"
+    "@types/react-router-hash-link": "^2.4.6",
+    "gh-pages": "^5.0.0"
   }
 }
